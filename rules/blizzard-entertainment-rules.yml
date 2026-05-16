@@ -1,0 +1,61 @@
+extends:
+  - spectral:oas
+formats:
+  - oas3
+rules:
+  blizzard-info-contact-defined:
+    description: Battle.net APIs must declare a Battle.net Developer Portal contact.
+    message: "{{description}}"
+    given: $.info
+    severity: error
+    then:
+      field: contact
+      function: truthy
+
+  blizzard-server-regional-host:
+    description: Servers must use a Battle.net regional host (us, eu, kr, tw, cn) or oauth.battle.net.
+    message: "Server URL '{{value}}' should be a battle.net or blizzard.com host"
+    given: $.servers[*].url
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://([a-z]{2}\\.api\\.blizzard\\.com|oauth\\.battle\\.net)"
+
+  blizzard-bearer-auth-required:
+    description: Game Data and Profile endpoints require bearer-token auth.
+    message: "Security scheme must use OAuth 2.0 bearer tokens"
+    given: $.components.securitySchemes.bearerAuth
+    severity: warn
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          required:
+            - type
+            - scheme
+          properties:
+            type:
+              const: http
+            scheme:
+              const: bearer
+
+  blizzard-operation-summary-title-case:
+    description: Operation summaries must use Title Case.
+    message: "Operation summary '{{value}}' should be in Title Case"
+    given: $.paths.*.*.summary
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][a-zA-Z0-9]*(\\s+[A-Z][a-zA-Z0-9]*)*$"
+
+  blizzard-namespace-parameter:
+    description: Game Data endpoints should accept a namespace query parameter.
+    message: "Game Data endpoint should declare the namespace parameter"
+    given: "$.paths['/data/wow/realm/index'].get"
+    severity: warn
+    then:
+      field: parameters
+      function: truthy

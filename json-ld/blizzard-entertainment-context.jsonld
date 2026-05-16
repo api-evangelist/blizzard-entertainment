@@ -1,0 +1,82 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "blizzard": "https://api.blizzard.com/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Realm": "blizzard:Realm",
+    "ConnectedRealm": "blizzard:ConnectedRealm",
+    "Character": "blizzard:Character",
+    "Guild": "blizzard:Guild",
+    "Auction": "blizzard:Auction",
+    "AuctionList": "blizzard:AuctionList",
+    "Achievement": "blizzard:Achievement",
+    "Mount": "blizzard:Mount",
+    "Item": "blizzard:Item",
+    "Hero": "blizzard:Hero",
+    "Act": "blizzard:Act",
+    "Artisan": "blizzard:Artisan",
+    "Ladder": "blizzard:Ladder",
+    "Card": "blizzard:Card",
+    "CardBack": "blizzard:CardBack",
+    "Deck": "blizzard:Deck",
+    "AccessToken": "blizzard:AccessToken",
+    "UserInfo": "blizzard:UserInfo",
+    "id": "@id",
+    "name": "schema:name",
+    "slug": {
+      "@id": "blizzard:slug",
+      "@type": "xsd:string"
+    },
+    "locale": "schema:inLanguage",
+    "region": "schema:areaServed",
+    "namespace": "blizzard:namespace",
+    "battletag": "blizzard:battletag",
+    "level": {
+      "@id": "blizzard:level",
+      "@type": "xsd:integer"
+    },
+    "faction": "blizzard:faction",
+    "playableClass": "blizzard:playableClass",
+    "playableRace": "blizzard:playableRace",
+    "realm": "blizzard:realm",
+    "guild": "blizzard:guild",
+    "auctionId": {
+      "@id": "blizzard:auctionId",
+      "@type": "xsd:integer"
+    },
+    "buyout": {
+      "@id": "blizzard:buyout",
+      "@type": "xsd:integer"
+    },
+    "bid": {
+      "@id": "blizzard:bid",
+      "@type": "xsd:integer"
+    },
+    "timeLeft": "blizzard:timeLeft",
+    "achievementCriteria": "blizzard:achievementCriteria",
+    "deckCode": "blizzard:deckCode",
+    "cardSet": "blizzard:cardSet",
+    "rarity": "blizzard:rarity",
+    "manaCost": {
+      "@id": "blizzard:manaCost",
+      "@type": "xsd:integer"
+    },
+    "attack": {
+      "@id": "blizzard:attack",
+      "@type": "xsd:integer"
+    },
+    "health": {
+      "@id": "blizzard:health",
+      "@type": "xsd:integer"
+    },
+    "accessToken": "blizzard:accessToken",
+    "tokenType": "blizzard:tokenType",
+    "expiresIn": {
+      "@id": "blizzard:expiresIn",
+      "@type": "xsd:integer"
+    },
+    "scope": "blizzard:scope",
+    "sub": "blizzard:sub"
+  }
+}

@@ -1,0 +1,79 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Blizzard Entertainment
+providerId: blizzard-entertainment
+created: '2026-05-16'
+modified: '2026-05-16'
+reconciled: false
+tags:
+  - Games
+  - Battle.net
+  - Game Data
+  - Rate Limiting
+  - Throttling
+description: >-
+  Machine-readable rate-limit definitions for the Battle.net Developer API
+  surface. Captures the documented public per-second and per-hour ceilings as
+  well as recovery semantics. Defaults reflect Battle.net's long-published
+  public limits and should be reconciled against the current developer portal.
+headers:
+  limit: X-Plex-RateLimit-Limit
+  remaining: X-Plex-RateLimit-Remaining
+  reset: X-Plex-RateLimit-Reset
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: public-developer
+    name: Public Per-Second Limit
+    scope: client-id
+    metric: requests_per_second
+    limit: 100
+    burst: 100
+    timeFrame: second
+    applies:
+      - World of Warcraft Game Data API
+      - Diablo III Community API
+      - StarCraft II Community API
+      - Hearthstone Game Data API
+      - Battle.net OAuth API
+  - tier: public-developer
+    name: Public Per-Hour Limit
+    scope: client-id
+    metric: requests_per_hour
+    limit: 36000
+    timeFrame: hour
+    applies:
+      - World of Warcraft Game Data API
+      - Diablo III Community API
+      - StarCraft II Community API
+      - Hearthstone Game Data API
+      - Battle.net OAuth API
+  - tier: partner
+    name: Partner Negotiated Rate
+    scope: contract
+    metric: requests_per_second
+    limit: 500
+    timeFrame: second
+    applies:
+      - World of Warcraft Game Data API
+      - Diablo III Community API
+      - StarCraft II Community API
+      - Hearthstone Game Data API
+policies:
+  - name: Backoff Strategy
+    description: >-
+      Clients should implement exponential backoff with jitter when 429 or 503
+      responses are returned and honor any Retry-After header.
+  - name: Regional Independence
+    description: >-
+      Rate limits are tracked per regional host (us, eu, kr, tw). Calls to
+      different regions do not share quota.
+  - name: OAuth Token Reuse
+    description: >-
+      Client credentials access tokens are valid for ~24 hours and should be
+      cached rather than re-issued per request.
+maintainers: []

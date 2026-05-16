@@ -1,0 +1,93 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Blizzard Entertainment
+providerId: blizzard-entertainment
+created: '2026-05-16'
+modified: '2026-05-16'
+reconciled: false
+tags:
+  - Games
+  - Entertainment
+  - Battle.net
+  - Game Data
+description: >-
+  Machine-readable plans scaffold for the Battle.net Developer API surface.
+  Blizzard does not publish a paid commercial pricing surface for the public
+  Game Data APIs; access is free under the Battle.net Developer API Terms of
+  Use but is rate-limited per client. Tiers below are reconciliation defaults
+  intended to align community, partner, and contractual surfaces with the
+  provider's published documentation.
+plans:
+  - id: blizzard-entertainment-free
+    name: Public Developer
+    type: freemium
+    description: >-
+      Default free tier available to any developer who registers an OAuth
+      client on the Battle.net Developer Portal. Game Data and Profile APIs
+      are accessible under the published per-second and per-hour rate limits.
+    entries:
+      - label: Requests Per Second
+        description: Maximum requests per second per client (documented Battle.net default)
+        name: rate_limit_per_second
+        type: rate
+        metric: requests_per_second
+        limit: 100
+        timeFrame: second
+        geo: global
+        domains: []
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Requests Per Hour
+        description: Maximum requests per hour per client (documented Battle.net default)
+        name: rate_limit_per_hour
+        type: rate
+        metric: requests_per_hour
+        limit: 36000
+        timeFrame: hour
+        geo: global
+        domains: []
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Public Documentation
+      - name: Battle.net Developer Forum
+      - name: OAuth 2.0 Client Credentials
+      - name: Authorization Code Flow
+      - name: World of Warcraft Game Data API
+      - name: Diablo III Community API
+      - name: StarCraft II Community API
+      - name: Hearthstone Game Data API
+      - name: Battle.net OAuth API
+  - id: blizzard-entertainment-partner
+    name: Partner
+    type: paid
+    description: >-
+      Discretionary tier for officially recognized partners (companion-app
+      vendors, esports operators, large theorycrafting and stats sites)
+      negotiated directly with Blizzard. Higher rate ceilings and access to
+      additional namespaces may apply. Pricing placeholder; reconcile with
+      Blizzard's partner agreements.
+    entries:
+      - label: Negotiated Rate Limit
+        description: Negotiated steady-state rate
+        name: rate_limit
+        type: rate
+        metric: requests_per_second
+        limit: 500
+        timeFrame: second
+        geo: global
+        domains: []
+        unit: 1
+        price: TBD
+        userMultiplied: false
+    elements:
+      - name: Elevated Rate Limits
+      - name: Partner Support Channel
+      - name: World of Warcraft Game Data API
+      - name: Diablo III Community API
+      - name: StarCraft II Community API
+      - name: Hearthstone Game Data API
+maintainers: []

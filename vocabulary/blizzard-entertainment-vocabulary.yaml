@@ -1,0 +1,117 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Blizzard Entertainment
+  description: >-
+    Unified taxonomy of the Battle.net Developer API surface, mapping
+    operational dimensions (game-data resources, profile resources, OAuth)
+    and capability dimensions (companion apps, theorycrafting, esports
+    tooling) into a single reference vocabulary.
+  created: "2026-05-16"
+  modified: "2026-05-16"
+
+operational:
+  apis:
+    - name: World of Warcraft Game Data API
+      namespace: blizzard-wow
+      version: "1.0"
+      baseUrl: https://us.api.blizzard.com
+      status: active
+    - name: Diablo III Community API
+      namespace: blizzard-d3
+      version: "1.0"
+      baseUrl: https://us.api.blizzard.com
+      status: active
+    - name: StarCraft II Community API
+      namespace: blizzard-sc2
+      version: "1.0"
+      baseUrl: https://us.api.blizzard.com
+      status: active
+    - name: Hearthstone Game Data API
+      namespace: blizzard-hearthstone
+      version: "1.0"
+      baseUrl: https://us.api.blizzard.com
+      status: active
+    - name: Battle.net OAuth API
+      namespace: blizzard-oauth
+      version: "1.0"
+      baseUrl: https://oauth.battle.net
+      status: active
+
+  resources:
+    - name: realms
+      description: World of Warcraft realm and connected-realm reference data
+      api: blizzard-wow
+      actions: [list, get]
+    - name: characters
+      description: World of Warcraft character profile data
+      api: blizzard-wow
+      actions: [get]
+    - name: guilds
+      description: World of Warcraft guild profile data
+      api: blizzard-wow
+      actions: [get]
+    - name: auctions
+      description: Live auction-house listings per connected realm
+      api: blizzard-wow
+      actions: [get]
+    - name: achievements
+      description: World of Warcraft achievement reference data
+      api: blizzard-wow
+      actions: [list, get]
+    - name: acts
+      description: Diablo III act reference data
+      api: blizzard-d3
+      actions: [list, get]
+    - name: artisans
+      description: Diablo III artisan reference data
+      api: blizzard-d3
+      actions: [get]
+    - name: heroes
+      description: Diablo III player hero profile data
+      api: blizzard-d3
+      actions: [get]
+    - name: ladders
+      description: StarCraft II ladder and leaderboard data
+      api: blizzard-sc2
+      actions: [list, get]
+    - name: profiles
+      description: StarCraft II player profile data
+      api: blizzard-sc2
+      actions: [get]
+    - name: cards
+      description: Hearthstone card data
+      api: blizzard-hearthstone
+      actions: [search, get]
+    - name: decks
+      description: Hearthstone deck-code decoding
+      api: blizzard-hearthstone
+      actions: [get]
+    - name: tokens
+      description: OAuth access tokens
+      api: blizzard-oauth
+      actions: [create, inspect]
+
+capability:
+  personas:
+    - name: Companion App Developer
+      description: Builds mobile or web apps that surface character, guild, and profile data for individual players.
+    - name: Theorycrafting Developer
+      description: Builds stat-optimization and rank-tracking sites that ingest Battle.net data at scale.
+    - name: Esports Operator
+      description: Pulls ladder and seasonal data for tournament brackets, statistics, and broadcast overlays.
+  workflows:
+    - name: Companion App Workflow
+      description: Authenticate a player via OAuth authorization code flow, retrieve their character roster and profile detail.
+    - name: Auction House Sync Workflow
+      description: Poll the auction-house endpoint for each connected realm at the documented refresh interval to maintain a market index.
+    - name: Hearthstone Deck Decoder Workflow
+      description: Decode a Hearthstone deck code into card detail and surface card metadata for sharing or analysis.
+tags:
+  - Games
+  - Battle.net
+  - World of Warcraft
+  - Diablo III
+  - StarCraft II
+  - Hearthstone
+  - OAuth
