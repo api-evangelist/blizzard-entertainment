@@ -4,205 +4,230 @@ name: Blizzard Entertainment
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Games
-  - Entertainment
-  - Video Games
-  - Game Data
-  - Battle.net
-description: >-
-  Blizzard Entertainment is an American video game developer and publisher and a
-  subsidiary of Activision Blizzard. Blizzard exposes a Battle.net Developer
-  Portal that provides public OAuth 2.0 protected APIs returning game data and
-  player profile data for its major franchises including World of Warcraft,
-  Diablo III, StarCraft II, and Hearthstone.
+- Games
+- Entertainment
+- Video Games
+- Game Data
+- Battle.net
+description: Blizzard Entertainment is an American video game developer and publisher and a subsidiary of Activision Blizzard.
+  Blizzard exposes a Battle.net Developer Portal that provides public OAuth 2.0 protected APIs returning game data and player
+  profile data for its major franchises including World of Warcraft, Diablo III, StarCraft II, and Hearthstone.
 created: '2026-05-05'
-modified: '2026-05-16'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: blizzard-entertainment:world-of-warcraft-api
-    name: World of Warcraft Game Data API
-    description: >-
-      Battle.net Game Data API for World of Warcraft providing access to
-      achievements, auctions, characters, guilds, items, mounts, pets, PvP
-      seasons, realms, regions, and other core game data resources for both the
-      retail and classic clients. Endpoints follow the Battle.net regional host
-      pattern (e.g. https://us.api.blizzard.com) and require an OAuth 2.0 client
-      credentials access token. Namespaces (static, dynamic, profile) are passed
-      as query parameters to select the data set.
-    humanURL: https://develop.battle.net/documentation/world-of-warcraft
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - World of Warcraft
-      - Game Data
-      - Profile
-      - Auctions
-      - Characters
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-world-of-warcraft-openapi.yml
-  - aid: blizzard-entertainment:diablo-iii-api
-    name: Diablo III Community API
-    description: >-
-      Battle.net Community and Game Data API for Diablo III providing access to
-      acts, artisans, recipes, followers, character classes, items, item types,
-      and player career/hero profile data. Like other Battle.net APIs, endpoints
-      use regional hosts and require an OAuth 2.0 client credentials access
-      token.
-    humanURL: https://develop.battle.net/documentation/diablo-3
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - Diablo III
-      - Game Data
-      - Profile
-      - Items
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/diablo-3/community-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-diablo-iii-openapi.yml
-  - aid: blizzard-entertainment:starcraft-ii-api
-    name: StarCraft II Community API
-    description: >-
-      Battle.net Community API for StarCraft II providing access to ladder data,
-      player profiles, legacy profiles, and grandmaster leaderboards. Requires
-      an OAuth 2.0 client credentials access token issued by
-      https://oauth.battle.net.
-    humanURL: https://develop.battle.net/documentation/starcraft-2
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - StarCraft II
-      - Game Data
-      - Profile
-      - Ladder
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/starcraft-2/community-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-starcraft-ii-openapi.yml
-  - aid: blizzard-entertainment:hearthstone-api
-    name: Hearthstone Game Data API
-    description: >-
-      Battle.net Game Data API for Hearthstone providing access to card sets,
-      individual cards, card backs, card decks (deck codes), and metadata such
-      as classes, sets, rarities, types, and game modes. Card and metadata
-      lookups support locale-aware responses. Requires an OAuth 2.0 client
-      credentials access token.
-    humanURL: https://develop.battle.net/documentation/hearthstone
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - Hearthstone
-      - Game Data
-      - Cards
-      - Decks
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/hearthstone/game-data-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-hearthstone-openapi.yml
-  - aid: blizzard-entertainment:oauth-api
-    name: Battle.net OAuth API
-    description: >-
-      OAuth 2.0 authorization server for the Battle.net developer platform.
-      Supports the authorization code flow for user-context access (Battle.net
-      account login and profile scopes such as wow.profile, sc2.profile,
-      d3.profile, openid) and the client credentials flow for accessing the
-      public Game Data APIs. Hosted at https://oauth.battle.net.
-    humanURL: https://develop.battle.net/documentation/guides/using-oauth
-    baseURL: https://oauth.battle.net
-    tags:
-      - OAuth
-      - Authentication
-      - Authorization
-      - OpenID Connect
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-oauth-openapi.yml
-common:
-  - type: Website
-    url: https://www.blizzard.com/
-  - type: Portal
-    url: https://develop.battle.net/
+- aid: blizzard-entertainment:world-of-warcraft-api
+  name: World of Warcraft Game Data API
+  description: Battle.net Game Data API for World of Warcraft providing access to achievements, auctions, characters, guilds,
+    items, mounts, pets, PvP seasons, realms, regions, and other core game data resources for both the retail and classic
+    clients. Endpoints follow the Battle.net regional host pattern (e.g. https://us.api.blizzard.com) and require an OAuth
+    2.0 client credentials access token. Namespaces (static, dynamic, profile) are passed as query parameters to select the
+    data set.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - World of Warcraft
+  - Game Data
+  - Profile
+  - Auctions
+  - Characters
+  properties:
   - type: Documentation
-    url: https://develop.battle.net/documentation
-  - type: GettingStarted
-    url: https://develop.battle.net/documentation/guides/getting-started
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
   - type: Authentication
     url: https://develop.battle.net/documentation/guides/using-oauth
-  - type: TermsOfService
-    url: https://www.blizzard.com/legal/8b946525-de01-481a-9f4f-89af2c4f5d29/blizzard-end-user-license-agreement
-  - type: PrivacyPolicy
-    url: https://www.blizzard.com/legal/fba4d00f-c7e4-4883-b8b9-1b4500a402ea/blizzard-entertainment-privacy-notice
-  - type: Forum
-    url: https://us.forums.blizzard.com/en/blizzard/c/api-discussion/18
-  - type: SpectralRules
-    url: rules/blizzard-entertainment-rules.yml
+  - type: OpenAPI
+    url: openapi/blizzard-world-of-warcraft-openapi.yml
   - type: NaftikoCapability
-    url: capabilities/companion-app-workflow.yaml
-  - type: Vocabulary
-    url: vocabulary/blizzard-entertainment-vocabulary.yaml
-  - type: JSONLD
-    url: json-ld/blizzard-entertainment-context.jsonld
-  - type: Plans
-    url: plans/blizzard-entertainment-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/blizzard-entertainment-rate-limits.yml
-  - type: FinOps
-    url: finops/blizzard-entertainment-finops.yml
-  - type: Features
-    data:
-      - name: Multi-Game Coverage
-        description: Single platform exposes Game Data and Community APIs for World of Warcraft, Diablo III, StarCraft II, and Hearthstone
-      - name: OAuth 2.0 Authentication
-        description: Client credentials flow for public game data and authorization code flow for player-profile data
-      - name: Regional API Hosts
-        description: Independent regional endpoints for US, EU, KR, TW, and CN with locale-aware responses
-      - name: Battle.net Account Login
-        description: OpenID Connect compatible login that lets third-party apps authenticate Battle.net users
-      - name: Static and Dynamic Namespaces
-        description: Game Data APIs are partitioned by namespace (static-, dynamic-, profile-) to separate patch-stable reference data from live state
-      - name: Auction House Data
-        description: Endpoint exposing live World of Warcraft auction house listings per connected realm
-  - type: UseCases
-    data:
-      - name: Companion Apps
-        description: Build mobile and web companion apps that surface character, guild, ladder, and profile data
-      - name: Theorycrafting and Stats Sites
-        description: Power character optimizer, mythic-plus rank tracker, and deck-tracker sites with first-party data
-      - name: Esports Tooling
-        description: Pull ladder and seasonal data for esports brackets, statistics, and broadcast overlays
-      - name: Add-on and Mod Ecosystems
-        description: Provide authoritative reference data to community add-on libraries and mod managers
-      - name: Account Linking
-        description: Let players authenticate with their Battle.net account in third-party communities and tournament platforms
-  - type: Integrations
-    data:
-      - name: Discord
-        description: Battle.net account linking is widely combined with Discord OAuth for community gating
-      - name: Twitch
-        description: Companion overlays and stream tools surface live ladder and profile data
-      - name: Raider.IO
-        description: Community service that aggregates WoW profile and mythic-plus data via the Game Data API
-  - type: Compliance
-    data:
-      - name: Battle.net API Terms of Use
-        description: Public developer access governed by the Battle.net Developer Terms of Use, including rate limits and attribution requirements
-      - name: COPPA
-        description: Battle.net account creation enforces age gating consistent with COPPA in the United States
-      - name: GDPR
-        description: EU regional endpoints and data handling are governed by Activision Blizzard's GDPR program
+    url: capabilities/blizzard-world-of-warcraft-achievements.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-world-of-warcraft-auctions.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-world-of-warcraft-characters.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-world-of-warcraft-guilds.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-world-of-warcraft-mounts.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-world-of-warcraft-realms.yaml
+- aid: blizzard-entertainment:diablo-iii-api
+  name: Diablo III Community API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers,
+    character classes, items, item types, and player career/hero profile data. Like other Battle.net APIs, endpoints use regional
+    hosts and require an OAuth 2.0 client credentials access token.
+  humanURL: https://develop.battle.net/documentation/diablo-3
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Diablo III
+  - Game Data
+  - Profile
+  - Items
+  properties:
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: OpenAPI
+    url: openapi/blizzard-diablo-iii-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-diablo-iii-acts.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-diablo-iii-artisans.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-diablo-iii-characters.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-diablo-iii-items.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-diablo-iii-profiles.yaml
+- aid: blizzard-entertainment:starcraft-ii-api
+  name: StarCraft II Community API
+  description: Battle.net Community API for StarCraft II providing access to ladder data, player profiles, legacy profiles,
+    and grandmaster leaderboards. Requires an OAuth 2.0 client credentials access token issued by https://oauth.battle.net.
+  humanURL: https://develop.battle.net/documentation/starcraft-2
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - StarCraft II
+  - Game Data
+  - Profile
+  - Ladder
+  properties:
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: OpenAPI
+    url: openapi/blizzard-starcraft-ii-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-starcraft-ii-ladders.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-starcraft-ii-profiles.yaml
+- aid: blizzard-entertainment:hearthstone-api
+  name: Hearthstone Game Data API
+  description: Battle.net Game Data API for Hearthstone providing access to card sets, individual cards, card backs, card
+    decks (deck codes), and metadata such as classes, sets, rarities, types, and game modes. Card and metadata lookups support
+    locale-aware responses. Requires an OAuth 2.0 client credentials access token.
+  humanURL: https://develop.battle.net/documentation/hearthstone
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Hearthstone
+  - Game Data
+  - Cards
+  - Decks
+  properties:
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: OpenAPI
+    url: openapi/blizzard-hearthstone-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-hearthstone-card-backs.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-hearthstone-cards.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-hearthstone-decks.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-hearthstone-metadata.yaml
+- aid: blizzard-entertainment:oauth-api
+  name: Battle.net OAuth API
+  description: OAuth 2.0 authorization server for the Battle.net developer platform. Supports the authorization code flow
+    for user-context access (Battle.net account login and profile scopes such as wow.profile, sc2.profile, d3.profile, openid)
+    and the client credentials flow for accessing the public Game Data APIs. Hosted at https://oauth.battle.net.
+  humanURL: https://develop.battle.net/documentation/guides/using-oauth
+  baseURL: https://oauth.battle.net
+  tags:
+  - OAuth
+  - Authentication
+  - Authorization
+  - OpenID Connect
+  properties:
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: OpenAPI
+    url: openapi/blizzard-oauth-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-oauth-authorization.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-oauth-token.yaml
+  - type: NaftikoCapability
+    url: capabilities/blizzard-oauth-userinfo.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/blizzard-entertainment
+- type: Website
+  url: https://www.blizzard.com/
+- type: Portal
+  url: https://develop.battle.net/
+- type: Documentation
+  url: https://develop.battle.net/documentation
+- type: GettingStarted
+  url: https://develop.battle.net/documentation/guides/getting-started
+- type: Authentication
+  url: https://develop.battle.net/documentation/guides/using-oauth
+- type: TermsOfService
+  url: https://www.blizzard.com/legal/8b946525-de01-481a-9f4f-89af2c4f5d29/blizzard-end-user-license-agreement
+- type: PrivacyPolicy
+  url: https://www.blizzard.com/legal/fba4d00f-c7e4-4883-b8b9-1b4500a402ea/blizzard-entertainment-privacy-notice
+- type: Forum
+  url: https://us.forums.blizzard.com/en/blizzard/c/api-discussion/18
+- type: SpectralRules
+  url: rules/blizzard-entertainment-rules.yml
+- type: Vocabulary
+  url: vocabulary/blizzard-entertainment-vocabulary.yaml
+- type: JSONLD
+  url: json-ld/blizzard-entertainment-context.jsonld
+- type: Plans
+  url: plans/blizzard-entertainment-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/blizzard-entertainment-rate-limits.yml
+- type: FinOps
+  url: finops/blizzard-entertainment-finops.yml
+- type: Features
+  data:
+  - name: Multi-Game Coverage
+    description: Single platform exposes Game Data and Community APIs for World of Warcraft, Diablo III, StarCraft II, and
+      Hearthstone
+  - name: OAuth 2.0 Authentication
+    description: Client credentials flow for public game data and authorization code flow for player-profile data
+  - name: Regional API Hosts
+    description: Independent regional endpoints for US, EU, KR, TW, and CN with locale-aware responses
+  - name: Battle.net Account Login
+    description: OpenID Connect compatible login that lets third-party apps authenticate Battle.net users
+  - name: Static and Dynamic Namespaces
+    description: Game Data APIs are partitioned by namespace (static-, dynamic-, profile-) to separate patch-stable reference
+      data from live state
+  - name: Auction House Data
+    description: Endpoint exposing live World of Warcraft auction house listings per connected realm
+- type: UseCases
+  data:
+  - name: Companion Apps
+    description: Build mobile and web companion apps that surface character, guild, ladder, and profile data
+  - name: Theorycrafting and Stats Sites
+    description: Power character optimizer, mythic-plus rank tracker, and deck-tracker sites with first-party data
+  - name: Esports Tooling
+    description: Pull ladder and seasonal data for esports brackets, statistics, and broadcast overlays
+  - name: Add-on and Mod Ecosystems
+    description: Provide authoritative reference data to community add-on libraries and mod managers
+  - name: Account Linking
+    description: Let players authenticate with their Battle.net account in third-party communities and tournament platforms
+- type: Integrations
+  data:
+  - name: Discord
+    description: Battle.net account linking is widely combined with Discord OAuth for community gating
+  - name: Twitch
+    description: Companion overlays and stream tools surface live ladder and profile data
+  - name: Raider.IO
+    description: Community service that aggregates WoW profile and mythic-plus data via the Game Data API
+- type: Compliance
+  data:
+  - name: Battle.net API Terms of Use
+    description: Public developer access governed by the Battle.net Developer Terms of Use, including rate limits and attribution
+      requirements
+  - name: COPPA
+    description: Battle.net account creation enforces age gating consistent with COPPA in the United States
+  - name: GDPR
+    description: EU regional endpoints and data handling are governed by Activision Blizzard's GDPR program
 position: Provider
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

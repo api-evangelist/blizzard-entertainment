@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hearthstone Game Data API — Metadata
+  description: 'Hearthstone Game Data API — Metadata. 1 operations. Lead operation: Get Metadata. Self-contained Naftiko capability
+    covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Metadata
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-hearthstone-metadata
+    baseUri: https://us.api.blizzard.com
+    description: Hearthstone Game Data API — Metadata business capability. Self-contained, no shared references.
+    resources:
+    - name: hearthstone-metadata
+      path: /hearthstone/metadata
+      operations:
+      - name: getmetadata
+        method: GET
+        description: Get Metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-hearthstone-metadata-rest
+    port: 8080
+    description: REST adapter for Hearthstone Game Data API — Metadata. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/hearthstone/metadata
+      name: hearthstone-metadata
+      description: REST surface for hearthstone-metadata.
+      operations:
+      - method: GET
+        name: getmetadata
+        description: Get Metadata
+        call: blizzard-hearthstone-metadata.getmetadata
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-hearthstone-metadata-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Hearthstone Game Data API — Metadata. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-metadata
+      description: Get Metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-hearthstone-metadata.getmetadata
+      outputParameters:
+      - type: object
+        mapping: $.

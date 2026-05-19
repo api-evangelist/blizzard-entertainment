@@ -1,0 +1,122 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Battle.net OAuth API — Token
+  description: 'Battle.net OAuth API — Token. 2 operations. Lead operation: Check Token. Self-contained Naftiko capability
+    covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Token
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-oauth-token
+    baseUri: https://oauth.battle.net
+    description: Battle.net OAuth API — Token business capability. Self-contained, no shared references.
+    resources:
+    - name: oauth-check_token
+      path: /oauth/check_token
+      operations:
+      - name: checktoken
+        method: POST
+        description: Check Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: token
+      path: /token
+      operations:
+      - name: createtoken
+        method: POST
+        description: Create Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-oauth-token-rest
+    port: 8080
+    description: REST adapter for Battle.net OAuth API — Token. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/oauth/check-token
+      name: oauth-check-token
+      description: REST surface for oauth-check_token.
+      operations:
+      - method: POST
+        name: checktoken
+        description: Check Token
+        call: blizzard-oauth-token.checktoken
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/token
+      name: token
+      description: REST surface for token.
+      operations:
+      - method: POST
+        name: createtoken
+        description: Create Token
+        call: blizzard-oauth-token.createtoken
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-oauth-token-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Battle.net OAuth API — Token. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: check-token
+      description: Check Token
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: blizzard-oauth-token.checktoken
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-token
+      description: Create Token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: blizzard-oauth-token.createtoken
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

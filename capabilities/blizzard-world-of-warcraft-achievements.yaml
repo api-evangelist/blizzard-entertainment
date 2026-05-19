@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: World of Warcraft Game Data API — Achievements
+  description: 'World of Warcraft Game Data API — Achievements. 1 operations. Lead operation: Get Achievement Index. Self-contained
+    Naftiko capability covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Achievements
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-world-of-warcraft-achievements
+    baseUri: https://us.api.blizzard.com
+    description: World of Warcraft Game Data API — Achievements business capability. Self-contained, no shared references.
+    resources:
+    - name: data-wow-achievement-index
+      path: /data/wow/achievement/index
+      operations:
+      - name: getachievementindex
+        method: GET
+        description: Get Achievement Index
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-world-of-warcraft-achievements-rest
+    port: 8080
+    description: REST adapter for World of Warcraft Game Data API — Achievements. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/data/wow/achievement/index
+      name: data-wow-achievement-index
+      description: REST surface for data-wow-achievement-index.
+      operations:
+      - method: GET
+        name: getachievementindex
+        description: Get Achievement Index
+        call: blizzard-world-of-warcraft-achievements.getachievementindex
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-world-of-warcraft-achievements-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for World of Warcraft Game Data API — Achievements. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: get-achievement-index
+      description: Get Achievement Index
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-world-of-warcraft-achievements.getachievementindex
+      outputParameters:
+      - type: object
+        mapping: $.

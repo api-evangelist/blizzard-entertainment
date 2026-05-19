@@ -1,0 +1,134 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: StarCraft II Community API — Ladders
+  description: 'StarCraft II Community API — Ladders. 3 operations. Lead operation: Get Grandmaster Leaderboard. Self-contained
+    Naftiko capability covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Ladders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-starcraft-ii-ladders
+    baseUri: https://us.api.blizzard.com
+    description: StarCraft II Community API — Ladders business capability. Self-contained, no shared references.
+    resources:
+    - name: sc2-ladder-grandmaster-regionId
+      path: /sc2/ladder/grandmaster/{regionId}
+      operations:
+      - name: getgrandmasterleaderboard
+        method: GET
+        description: Get Grandmaster Leaderboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sc2-ladder-season-regionId
+      path: /sc2/ladder/season/{regionId}
+      operations:
+      - name: getseason
+        method: GET
+        description: Get Season
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sc2-profile-regionId-realmId-profileId-ladders
+      path: /sc2/profile/{regionId}/{realmId}/{profileId}/ladders
+      operations:
+      - name: getprofileladders
+        method: GET
+        description: Get Profile Ladders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-starcraft-ii-ladders-rest
+    port: 8080
+    description: REST adapter for StarCraft II Community API — Ladders. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/sc2/ladder/grandmaster/{regionid}
+      name: sc2-ladder-grandmaster-regionid
+      description: REST surface for sc2-ladder-grandmaster-regionId.
+      operations:
+      - method: GET
+        name: getgrandmasterleaderboard
+        description: Get Grandmaster Leaderboard
+        call: blizzard-starcraft-ii-ladders.getgrandmasterleaderboard
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sc2/ladder/season/{regionid}
+      name: sc2-ladder-season-regionid
+      description: REST surface for sc2-ladder-season-regionId.
+      operations:
+      - method: GET
+        name: getseason
+        description: Get Season
+        call: blizzard-starcraft-ii-ladders.getseason
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sc2/profile/{regionid}/{realmid}/{profileid}/ladders
+      name: sc2-profile-regionid-realmid-profileid-ladders
+      description: REST surface for sc2-profile-regionId-realmId-profileId-ladders.
+      operations:
+      - method: GET
+        name: getprofileladders
+        description: Get Profile Ladders
+        call: blizzard-starcraft-ii-ladders.getprofileladders
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-starcraft-ii-ladders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for StarCraft II Community API — Ladders. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-grandmaster-leaderboard
+      description: Get Grandmaster Leaderboard
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-starcraft-ii-ladders.getgrandmasterleaderboard
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-season
+      description: Get Season
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-starcraft-ii-ladders.getseason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-profile-ladders
+      description: Get Profile Ladders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-starcraft-ii-ladders.getprofileladders
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,127 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Diablo III Community API — Profiles
+  description: 'Diablo III Community API — Profiles. 2 operations. Lead operation: Get Api Account. Self-contained Naftiko
+    capability covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Profiles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-diablo-iii-profiles
+    baseUri: https://us.api.blizzard.com
+    description: Diablo III Community API — Profiles business capability. Self-contained, no shared references.
+    resources:
+    - name: d3-profile-accountId
+      path: /d3/profile/{accountId}/
+      operations:
+      - name: getapiaccount
+        method: GET
+        description: Get Api Account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          description: Battle.net account id in the form name-tag.
+          required: true
+    - name: d3-profile-accountId-hero-heroId
+      path: /d3/profile/{accountId}/hero/{heroId}
+      operations:
+      - name: getapihero
+        method: GET
+        description: Get Api Hero
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: heroId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-diablo-iii-profiles-rest
+    port: 8080
+    description: REST adapter for Diablo III Community API — Profiles. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/d3/profile/{accountid}
+      name: d3-profile-accountid
+      description: REST surface for d3-profile-accountId.
+      operations:
+      - method: GET
+        name: getapiaccount
+        description: Get Api Account
+        call: blizzard-diablo-iii-profiles.getapiaccount
+        with:
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/d3/profile/{accountid}/hero/{heroid}
+      name: d3-profile-accountid-hero-heroid
+      description: REST surface for d3-profile-accountId-hero-heroId.
+      operations:
+      - method: GET
+        name: getapihero
+        description: Get Api Hero
+        call: blizzard-diablo-iii-profiles.getapihero
+        with:
+          accountId: rest.accountId
+          heroId: rest.heroId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-diablo-iii-profiles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Diablo III Community API — Profiles. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-api-account
+      description: Get Api Account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-diablo-iii-profiles.getapiaccount
+      with:
+        accountId: tools.accountId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-hero
+      description: Get Api Hero
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-diablo-iii-profiles.getapihero
+      with:
+        accountId: tools.accountId
+        heroId: tools.heroId
+      outputParameters:
+      - type: object
+        mapping: $.

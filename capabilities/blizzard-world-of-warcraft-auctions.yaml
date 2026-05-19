@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: World of Warcraft Game Data API — Auctions
+  description: 'World of Warcraft Game Data API — Auctions. 1 operations. Lead operation: Get Auctions. Self-contained Naftiko
+    capability covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Auctions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-world-of-warcraft-auctions
+    baseUri: https://us.api.blizzard.com
+    description: World of Warcraft Game Data API — Auctions business capability. Self-contained, no shared references.
+    resources:
+    - name: data-wow-connected-realm-connectedRealmId-auctions
+      path: /data/wow/connected-realm/{connectedRealmId}/auctions
+      operations:
+      - name: getauctions
+        method: GET
+        description: Get Auctions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: connectedRealmId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-world-of-warcraft-auctions-rest
+    port: 8080
+    description: REST adapter for World of Warcraft Game Data API — Auctions. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/data/wow/connected-realm/{connectedrealmid}/auctions
+      name: data-wow-connected-realm-connectedrealmid-auctions
+      description: REST surface for data-wow-connected-realm-connectedRealmId-auctions.
+      operations:
+      - method: GET
+        name: getauctions
+        description: Get Auctions
+        call: blizzard-world-of-warcraft-auctions.getauctions
+        with:
+          connectedRealmId: rest.connectedRealmId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-world-of-warcraft-auctions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for World of Warcraft Game Data API — Auctions. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: get-auctions
+      description: Get Auctions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-world-of-warcraft-auctions.getauctions
+      with:
+        connectedRealmId: tools.connectedRealmId
+      outputParameters:
+      - type: object
+        mapping: $.

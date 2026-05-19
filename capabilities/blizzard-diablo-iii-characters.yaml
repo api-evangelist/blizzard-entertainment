@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Diablo III Community API — Characters
+  description: 'Diablo III Community API — Characters. 1 operations. Lead operation: Get Character Class. Self-contained Naftiko
+    capability covering one Blizzard Entertainment business surface.'
+  tags:
+  - Blizzard Entertainment
+  - Characters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLIZZARD_ENTERTAINMENT_API_KEY: BLIZZARD_ENTERTAINMENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: blizzard-diablo-iii-characters
+    baseUri: https://us.api.blizzard.com
+    description: Diablo III Community API — Characters business capability. Self-contained, no shared references.
+    resources:
+    - name: d3-data-hero-classSlug
+      path: /d3/data/hero/{classSlug}
+      operations:
+      - name: getcharacterclass
+        method: GET
+        description: Get Character Class
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: classSlug
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLIZZARD_ENTERTAINMENT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: blizzard-diablo-iii-characters-rest
+    port: 8080
+    description: REST adapter for Diablo III Community API — Characters. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/d3/data/hero/{classslug}
+      name: d3-data-hero-classslug
+      description: REST surface for d3-data-hero-classSlug.
+      operations:
+      - method: GET
+        name: getcharacterclass
+        description: Get Character Class
+        call: blizzard-diablo-iii-characters.getcharacterclass
+        with:
+          classSlug: rest.classSlug
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: blizzard-diablo-iii-characters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Diablo III Community API — Characters. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-character-class
+      description: Get Character Class
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: blizzard-diablo-iii-characters.getcharacterclass
+      with:
+        classSlug: tools.classSlug
+      outputParameters:
+      - type: object
+        mapping: $.
