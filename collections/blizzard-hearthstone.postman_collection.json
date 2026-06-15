@@ -1,0 +1,543 @@
+{
+  "item": [
+    {
+      "id": "1e0c85ae-dc7c-45b7-8c0c-0fa99b2a11a0",
+      "name": "Cards",
+      "description": {
+        "content": "Search and retrieve Hearthstone cards.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "282768b3-9c8a-42a8-9346-b40e6ebc3644",
+          "name": "Search Cards",
+          "request": {
+            "name": "Search Cards",
+            "description": {
+              "content": "Returns a list of cards matching the supplied filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "cards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "set",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "class",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manaCost",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manaCost",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "248025ef-7f32-42e0-b358-9300ffa1f3b4",
+              "name": "Cards returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "set",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "class",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "manaCost",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "manaCost",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb949b03-8201-4904-8b54-628cd77a0868",
+          "name": "Get Card",
+          "request": {
+            "name": "Get Card",
+            "description": {
+              "content": "Returns a single Hearthstone card by id or slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "cards",
+                ":idOrSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "idOrSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c140f311-597c-45c3-ae2d-4fbef84c3425",
+              "name": "Card returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "cards",
+                    ":idOrSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "idOrSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "afbd0c6e-88de-4a23-9669-e1cf2740198d",
+      "name": "Card Backs",
+      "description": {
+        "content": "Retrieve Hearthstone card-back data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d576d60-e2e4-40d7-9775-bf9a9b8094f8",
+          "name": "Search Card Backs",
+          "request": {
+            "name": "Search Card Backs",
+            "description": {
+              "content": "Returns a list of card backs matching the supplied filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "cardbacks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71ca2928-6ff9-47c9-bff5-848b9d39ba90",
+              "name": "Card backs returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "cardbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cf75aa4e-b212-405a-b315-1d7cd530b133",
+      "name": "Decks",
+      "description": {
+        "content": "Decode Hearthstone deck codes.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "324beb1e-1c1d-4b2b-b25a-9e192ae092a0",
+          "name": "Get Deck",
+          "request": {
+            "name": "Get Deck",
+            "description": {
+              "content": "Returns the deck represented by a Hearthstone deck code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "deck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "(Required) Hearthstone deck code."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5a73077-ae14-4c86-8e47-bc1a9a596dee",
+              "name": "Deck returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "deck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c8bfed4e-cce3-49ba-8c3c-d8d6f39b1ee9",
+      "name": "Metadata",
+      "description": {
+        "content": "Retrieve Hearthstone metadata reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4ef72453-72f6-4f17-a9f8-2296161c3a74",
+          "name": "Get Metadata",
+          "request": {
+            "name": "Get Metadata",
+            "description": {
+              "content": "Returns Hearthstone metadata reference data (sets, classes, etc.).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f46331c-07a0-405f-88d8-c919f7c62e6a",
+              "name": "Metadata returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "61adf877-0de5-4a9c-8442-45d0d1a09650",
+    "name": "Hearthstone Game Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Game Data API for Hearthstone providing access to card sets, individual cards, card backs, card decks (deck codes), and metadata such as classes, sets, rarities, types, and game modes. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

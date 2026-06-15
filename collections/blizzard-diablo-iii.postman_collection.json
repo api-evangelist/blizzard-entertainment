@@ -1,0 +1,677 @@
+{
+  "item": [
+    {
+      "id": "466cd52b-5b3b-4e65-a318-9339104d9849",
+      "name": "Acts",
+      "description": {
+        "content": "Retrieve Diablo III act reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2a67560a-5dce-4136-b89a-153817ed1ee9",
+          "name": "Get Act Index",
+          "request": {
+            "name": "Get Act Index",
+            "description": {
+              "content": "Returns an index of Diablo III acts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "data",
+                "act"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14497081-0cd2-4252-a75f-1c9d9acddcd3",
+              "name": "Acts returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "data",
+                    "act"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "64c04dc2-ce7e-450e-96c2-1ef5e6c253c4",
+      "name": "Artisans",
+      "description": {
+        "content": "Retrieve artisan and recipe reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5741257d-0d7f-4f1e-99a4-3c681893e499",
+          "name": "Get Artisan",
+          "request": {
+            "name": "Get Artisan",
+            "description": {
+              "content": "Returns an artisan by slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "data",
+                "artisan",
+                ":artisanSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "artisanSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdc7edc5-2cbd-4208-86f7-c39f4b7bbe82",
+              "name": "Artisan returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "data",
+                    "artisan",
+                    ":artisanSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "artisanSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c9101daa-0b1e-4cb0-823a-23e9db987899",
+      "name": "Characters",
+      "description": {
+        "content": "Retrieve character class and skill reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e66c77d8-adcc-420c-835a-3cd49904ef82",
+          "name": "Get Character Class",
+          "request": {
+            "name": "Get Character Class",
+            "description": {
+              "content": "Returns a Diablo III character class by slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "data",
+                "hero",
+                ":classSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "classSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a4b4b6b-6ef7-445a-83d9-4de2470bfab3",
+              "name": "Class returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "data",
+                    "hero",
+                    ":classSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "classSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "85aaa09d-6850-438b-b1d7-75abdd76de38",
+      "name": "Items",
+      "description": {
+        "content": "Retrieve item type and item reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a8670095-3167-4af0-a0d0-cfe8f953d039",
+          "name": "Get Item Type Index",
+          "request": {
+            "name": "Get Item Type Index",
+            "description": {
+              "content": "Returns an index of item types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "data",
+                "item-type"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "775f6b72-a97f-43dc-97d2-3824b9ec16d7",
+              "name": "Item types returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "data",
+                    "item-type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2ecb70d0-52cb-4699-b93d-6277a8166d68",
+      "name": "Profiles",
+      "description": {
+        "content": "Retrieve player career and hero profile data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3af1a4f0-dcb3-4d2a-b81b-a10b65739b83",
+          "name": "Get Api Account",
+          "request": {
+            "name": "Get Api Account",
+            "description": {
+              "content": "Returns a player's full Diablo III career profile.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "profile",
+                ":accountId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Battle.net account id in the form name-tag."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c8f91c2-2f42-43a6-8be9-06505cba9d37",
+              "name": "Profile returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "profile",
+                    ":accountId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Battle.net account id in the form name-tag."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf7bb76c-1e38-4518-84cb-768c7c705e17",
+          "name": "Get Api Hero",
+          "request": {
+            "name": "Get Api Hero",
+            "description": {
+              "content": "Returns a single hero from a player's Diablo III career.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "profile",
+                ":accountId",
+                "hero",
+                ":heroId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "heroId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c318902-0063-4b8b-854e-c1b0aec773d8",
+              "name": "Hero returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "profile",
+                    ":accountId",
+                    "hero",
+                    ":heroId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "heroId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3207aafa-0250-4e2d-a92c-4b83015ffe0f",
+    "name": "Diablo III Community API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

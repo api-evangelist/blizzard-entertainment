@@ -1,0 +1,269 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "World of Warcraft Game Data API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Realms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Realm Index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/realm/index",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns an index of realms for the regional host."
+        },
+        {
+          "info": {
+            "name": "Get Realm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/realm/:realmSlug",
+            "params": [
+              {
+                "name": "realmSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a single realm by slug."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Auctions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Auctions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/connected-realm/:connectedRealmId/auctions",
+            "params": [
+              {
+                "name": "connectedRealmId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns all active auctions for a connected realm."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Characters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Character Profile Summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/profile/wow/character/:realmSlug/:characterName",
+            "params": [
+              {
+                "name": "realmSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "characterName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a profile summary for a single WoW character."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guilds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Guild",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/guild/:realmSlug/:nameSlug",
+            "params": [
+              {
+                "name": "realmSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "nameSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a guild profile."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Achievements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Achievement Index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/achievement/index",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns an index of achievements."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Mounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Mount Index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/mount/index",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns an index of mounts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
