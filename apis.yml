@@ -138,7 +138,7 @@ common:
     url: https://www.blizzard.com/legal/8b946525-de01-481a-9f4f-89af2c4f5d29/blizzard-end-user-license-agreement
   - type: PrivacyPolicy
     url: https://www.blizzard.com/legal/fba4d00f-c7e4-4883-b8b9-1b4500a402ea/blizzard-entertainment-privacy-notice
-  - type: Forum
+  - type: Forums
     url: https://us.forums.blizzard.com/en/blizzard/c/api-discussion/18
   - type: SpectralRules
     url: rules/blizzard-entertainment-rules.yml
