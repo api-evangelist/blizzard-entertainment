@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/blizzard-diablo-iii-openapi.yml, openapi/blizzard-hearthstone-openapi.yml, openapi/blizzard-oauth-openapi.yml,
+  openapi/blizzard-starcraft-ii-openapi.yml, openapi/blizzard-world-of-warcraft-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/blizzard-diablo-iii-openapi.yml
+  - openapi/blizzard-hearthstone-openapi.yml
+  - openapi/blizzard-oauth-openapi.yml
+  - openapi/blizzard-starcraft-ii-openapi.yml
+  - openapi/blizzard-world-of-warcraft-openapi.yml

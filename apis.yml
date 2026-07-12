@@ -120,6 +120,10 @@ apis:
       - type: OpenAPI
         url: openapi/blizzard-oauth-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/blizzard-entertainment-domain-security.yml
+  - type: Authentication
+    url: authentication/blizzard-entertainment-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/Blizzard
   - type: LinkedIn
