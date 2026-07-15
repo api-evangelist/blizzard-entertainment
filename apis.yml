@@ -120,6 +120,8 @@ apis:
       - type: OpenAPI
         url: openapi/blizzard-oauth-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/blizzard-entertainment-agentic-access.yml
   - type: DomainSecurity
     url: security/blizzard-entertainment-domain-security.yml
   - type: Authentication
