@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Card Backs API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Card Backs
+  description: Retrieve Hearthstone card-back data.
+paths:
+  /hearthstone/cardbacks:
+    get:
+      operationId: searchCardBacks
+      summary: Search Card Backs
+      description: Returns a list of card backs matching the supplied filters.
+      tags:
+      - Card Backs
+      parameters:
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Card backs returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

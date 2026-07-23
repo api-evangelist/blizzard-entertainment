@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Auctions API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Auctions
+  description: Retrieve live auction-house listings per connected realm.
+paths:
+  /data/wow/connected-realm/{connectedRealmId}/auctions:
+    get:
+      operationId: getAuctions
+      summary: Get Auctions
+      description: Returns all active auctions for a connected realm.
+      tags:
+      - Auctions
+      parameters:
+      - name: connectedRealmId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/Namespace'
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Auction listings returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      description: Locale used for localized fields (e.g. en_US).
+      schema:
+        type: string
+    Namespace:
+      name: namespace
+      in: query
+      required: true
+      description: Game Data namespace (e.g. static-us, dynamic-us, profile-us).
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

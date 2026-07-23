@@ -1,0 +1,127 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Profiles API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Profiles
+  description: Retrieve player career and hero profile data.
+paths:
+  /d3/profile/{accountId}/:
+    get:
+      operationId: getApiAccount
+      summary: Get Api Account
+      description: Returns a player's full Diablo III career profile.
+      tags:
+      - Profiles
+      parameters:
+      - name: accountId
+        in: path
+        required: true
+        description: Battle.net account id in the form name-tag.
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Profile returned.
+  /d3/profile/{accountId}/hero/{heroId}:
+    get:
+      operationId: getApiHero
+      summary: Get Api Hero
+      description: Returns a single hero from a player's Diablo III career.
+      tags:
+      - Profiles
+      parameters:
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: heroId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Hero returned.
+  /sc2/profile/{regionId}/{realmId}/{profileId}:
+    get:
+      operationId: getProfile
+      summary: Get Profile
+      description: Returns a StarCraft II player profile.
+      tags:
+      - Profiles
+      parameters:
+      - $ref: '#/components/parameters/RegionId'
+      - $ref: '#/components/parameters/RealmId'
+      - $ref: '#/components/parameters/ProfileId'
+      - $ref: '#/components/parameters/Locale_2'
+      responses:
+        '200':
+          description: Profile returned.
+  /sc2/profile/{regionId}/{realmId}/{profileId}/ladders:
+    get:
+      operationId: getProfileLadders
+      summary: Get Profile Ladders
+      description: Returns the ladders a player is participating in.
+      tags:
+      - Profiles
+      parameters:
+      - $ref: '#/components/parameters/RegionId'
+      - $ref: '#/components/parameters/RealmId'
+      - $ref: '#/components/parameters/ProfileId'
+      - $ref: '#/components/parameters/Locale_2'
+      responses:
+        '200':
+          description: Ladders returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      description: Locale used for localized fields (e.g. en_US).
+      schema:
+        type: string
+    Locale_2:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
+    RealmId:
+      name: realmId
+      in: path
+      required: true
+      schema:
+        type: integer
+    RegionId:
+      name: regionId
+      in: path
+      required: true
+      schema:
+        type: integer
+    ProfileId:
+      name: profileId
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

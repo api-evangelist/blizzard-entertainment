@@ -1,0 +1,75 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Cards API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Cards
+  description: Search and retrieve Hearthstone cards.
+paths:
+  /hearthstone/cards:
+    get:
+      operationId: searchCards
+      summary: Search Cards
+      description: Returns a list of cards matching the supplied filters.
+      tags:
+      - Cards
+      parameters:
+      - name: set
+        in: query
+        schema:
+          type: string
+      - name: class
+        in: query
+        schema:
+          type: string
+      - name: manaCost
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Cards returned.
+  /hearthstone/cards/{idOrSlug}:
+    get:
+      operationId: getCard
+      summary: Get Card
+      description: Returns a single Hearthstone card by id or slug.
+      tags:
+      - Cards
+      parameters:
+      - name: idOrSlug
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Card returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

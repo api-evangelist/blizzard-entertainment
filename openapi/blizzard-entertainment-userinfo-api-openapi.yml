@@ -1,0 +1,37 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements UserInfo API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: UserInfo
+  description: OpenID Connect userinfo endpoint.
+paths:
+  /oauth/userinfo:
+    get:
+      operationId: getUserInfo
+      summary: Get User Info
+      description: Returns the Battle.net account id, battletag, and sub claim for the authenticated user.
+      tags:
+      - UserInfo
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: User info returned.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

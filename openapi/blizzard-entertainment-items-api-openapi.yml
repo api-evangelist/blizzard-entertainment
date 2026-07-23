@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Items API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Items
+  description: Retrieve item type and item reference data.
+paths:
+  /d3/data/item-type:
+    get:
+      operationId: getItemTypeIndex
+      summary: Get Item Type Index
+      description: Returns an index of item types.
+      tags:
+      - Items
+      parameters:
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Item types returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      description: Locale used for localized fields (e.g. en_US).
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

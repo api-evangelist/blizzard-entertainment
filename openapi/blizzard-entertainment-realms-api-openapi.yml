@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Realms API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Realms
+  description: Retrieve realm and connected-realm reference data.
+paths:
+  /data/wow/realm/index:
+    get:
+      operationId: getRealmIndex
+      summary: Get Realm Index
+      description: Returns an index of realms for the regional host.
+      tags:
+      - Realms
+      parameters:
+      - $ref: '#/components/parameters/Namespace'
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Realm index returned.
+  /data/wow/realm/{realmSlug}:
+    get:
+      operationId: getRealm
+      summary: Get Realm
+      description: Returns a single realm by slug.
+      tags:
+      - Realms
+      parameters:
+      - name: realmSlug
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Namespace'
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Realm returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      description: Locale used for localized fields (e.g. en_US).
+      schema:
+        type: string
+    Namespace:
+      name: namespace
+      in: query
+      required: true
+      description: Game Data namespace (e.g. static-us, dynamic-us, profile-us).
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

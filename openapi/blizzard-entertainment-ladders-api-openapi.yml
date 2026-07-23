@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: Diablo III Community Achievements Ladders API
+  description: Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+- url: https://us.api.blizzard.com
+  description: US regional host
+- url: https://eu.api.blizzard.com
+  description: EU regional host
+security:
+- bearerAuth: []
+tags:
+- name: Ladders
+  description: Retrieve ladder, grandmaster, and season data.
+paths:
+  /sc2/profile/{regionId}/{realmId}/{profileId}/ladders:
+    get:
+      operationId: getProfileLadders
+      summary: Get Profile Ladders
+      description: Returns the ladders a player is participating in.
+      tags:
+      - Ladders
+      parameters:
+      - $ref: '#/components/parameters/RegionId'
+      - $ref: '#/components/parameters/RealmId'
+      - $ref: '#/components/parameters/ProfileId'
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Ladders returned.
+  /sc2/ladder/grandmaster/{regionId}:
+    get:
+      operationId: getGrandmasterLeaderboard
+      summary: Get Grandmaster Leaderboard
+      description: Returns the current grandmaster leaderboard for a region.
+      tags:
+      - Ladders
+      parameters:
+      - $ref: '#/components/parameters/RegionId'
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Leaderboard returned.
+  /sc2/ladder/season/{regionId}:
+    get:
+      operationId: getSeason
+      summary: Get Season
+      description: Returns the current season for a region.
+      tags:
+      - Ladders
+      parameters:
+      - $ref: '#/components/parameters/RegionId'
+      - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Season returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
+    ProfileId:
+      name: profileId
+      in: path
+      required: true
+      schema:
+        type: integer
+    RealmId:
+      name: realmId
+      in: path
+      required: true
+      schema:
+        type: integer
+    RegionId:
+      name: regionId
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
