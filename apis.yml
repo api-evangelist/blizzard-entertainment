@@ -2,7 +2,20 @@ aid: blizzard-entertainment
 url: https://raw.githubusercontent.com/api-evangelist/blizzard-entertainment/refs/heads/main/apis.yml
 name: Blizzard Entertainment
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/blizzard-entertainment.png
 tags:
   - Games
   - Entertainment
@@ -17,108 +30,402 @@ created: '2026-05-05'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: blizzard-entertainment:world-of-warcraft-api
-    name: World of Warcraft Game Data API
-    description: >-
-      Battle.net Game Data API for World of Warcraft providing access to achievements, auctions, characters, guilds,
-      items, mounts, pets, PvP seasons, realms, regions, and other core game data resources for both the retail and
-      classic clients. Endpoints follow the Battle.net regional host pattern (e.g. https://us.api.blizzard.com) and
-      require an OAuth 2.0 client credentials access token. Namespaces (static, dynamic, profile) are passed as query
-      parameters to select the data set.
-    humanURL: https://develop.battle.net/documentation/world-of-warcraft
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - World of Warcraft
-      - Game Data
-      - Profile
-      - Auctions
-      - Characters
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-world-of-warcraft-openapi.yml
-  - aid: blizzard-entertainment:diablo-iii-api
-    name: Diablo III Community API
-    description: >-
-      Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers,
-      character classes, items, item types, and player career/hero profile data. Like other Battle.net APIs, endpoints
-      use regional hosts and require an OAuth 2.0 client credentials access token.
-    humanURL: https://develop.battle.net/documentation/diablo-3
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - Diablo III
-      - Game Data
-      - Profile
-      - Items
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/diablo-3/community-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-diablo-iii-openapi.yml
-  - aid: blizzard-entertainment:starcraft-ii-api
-    name: StarCraft II Community API
-    description: >-
-      Battle.net Community API for StarCraft II providing access to ladder data, player profiles, legacy profiles, and
-      grandmaster leaderboards. Requires an OAuth 2.0 client credentials access token issued by
-      https://oauth.battle.net.
-    humanURL: https://develop.battle.net/documentation/starcraft-2
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - StarCraft II
-      - Game Data
-      - Profile
-      - Ladder
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/starcraft-2/community-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-starcraft-ii-openapi.yml
-  - aid: blizzard-entertainment:hearthstone-api
-    name: Hearthstone Game Data API
-    description: >-
-      Battle.net Game Data API for Hearthstone providing access to card sets, individual cards, card backs, card decks
-      (deck codes), and metadata such as classes, sets, rarities, types, and game modes. Card and metadata lookups
-      support locale-aware responses. Requires an OAuth 2.0 client credentials access token.
-    humanURL: https://develop.battle.net/documentation/hearthstone
-    baseURL: https://us.api.blizzard.com
-    tags:
-      - Hearthstone
-      - Game Data
-      - Cards
-      - Decks
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/hearthstone/game-data-apis
-      - type: Authentication
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-hearthstone-openapi.yml
-  - aid: blizzard-entertainment:oauth-api
-    name: Battle.net OAuth API
-    description: >-
-      OAuth 2.0 authorization server for the Battle.net developer platform. Supports the authorization code flow for
-      user-context access (Battle.net account login and profile scopes such as wow.profile, sc2.profile, d3.profile,
-      openid) and the client credentials flow for accessing the public Game Data APIs. Hosted at
-      https://oauth.battle.net.
-    humanURL: https://develop.battle.net/documentation/guides/using-oauth
-    baseURL: https://oauth.battle.net
-    tags:
-      - OAuth
-      - Authentication
-      - Authorization
-      - OpenID Connect
-    properties:
-      - type: Documentation
-        url: https://develop.battle.net/documentation/guides/using-oauth
-      - type: OpenAPI
-        url: openapi/blizzard-oauth-openapi.yml
+- aid: blizzard-entertainment:blizzard-entertainment-achievements-api
+  name: Blizzard Entertainment Achievements API
+  description: Retrieve achievement reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Achievements
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-achievements-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-acts-api
+  name: Blizzard Entertainment Acts API
+  description: Retrieve Diablo III act reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Acts
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-acts-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-artisans-api
+  name: Blizzard Entertainment Artisans API
+  description: Retrieve artisan and recipe reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Artisans
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-artisans-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-auctions-api
+  name: Blizzard Entertainment Auctions API
+  description: Retrieve live auction-house listings per connected realm.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Auctions
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-auctions-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-authorization-api
+  name: Blizzard Entertainment Authorization API
+  description: User-context authorization endpoints.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Authorization
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-authorization-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-card-backs-api
+  name: Blizzard Entertainment Card Backs API
+  description: Retrieve Hearthstone card-back data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Card Backs
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-card-backs-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-cards-api
+  name: Blizzard Entertainment Cards API
+  description: Search and retrieve Hearthstone cards.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Cards
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-cards-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-characters-api
+  name: Blizzard Entertainment Characters API
+  description: Retrieve character class and skill reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Characters
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-characters-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-decks-api
+  name: Blizzard Entertainment Decks API
+  description: Decode Hearthstone deck codes.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Decks
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-decks-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-guilds-api
+  name: Blizzard Entertainment Guilds API
+  description: Retrieve guild profile data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Guilds
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-guilds-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-items-api
+  name: Blizzard Entertainment Items API
+  description: Retrieve item type and item reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-items-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-ladders-api
+  name: Blizzard Entertainment Ladders API
+  description: Retrieve ladder, grandmaster, and season data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Ladders
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-ladders-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-metadata-api
+  name: Blizzard Entertainment Metadata API
+  description: Retrieve Hearthstone metadata reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-metadata-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-mounts-api
+  name: Blizzard Entertainment Mounts API
+  description: Retrieve mount index and detail data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Mounts
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-mounts-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-profiles-api
+  name: Blizzard Entertainment Profiles API
+  description: Retrieve player career and hero profile data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-realms-api
+  name: Blizzard Entertainment Realms API
+  description: Retrieve realm and connected-realm reference data.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Realms
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-realms-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-token-api
+  name: Blizzard Entertainment Token API
+  description: Token issuance and inspection endpoints.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - Token
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-token-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
+- aid: blizzard-entertainment:blizzard-entertainment-userinfo-api
+  name: Blizzard Entertainment UserInfo API
+  description: OpenID Connect userinfo endpoint.
+  humanURL: https://develop.battle.net/documentation/world-of-warcraft
+  baseURL: https://us.api.blizzard.com
+  tags:
+  - UserInfo
+  properties:
+  - type: OpenAPI
+    url: openapi/blizzard-entertainment-userinfo-api-openapi.yml
+  - type: Documentation
+    url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
+  - type: Authentication
+    url: https://develop.battle.net/documentation/guides/using-oauth
+  - type: Documentation
+    url: https://develop.battle.net/documentation/diablo-3/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/starcraft-2/community-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/hearthstone/game-data-apis
+  - type: Documentation
+    url: https://develop.battle.net/documentation/guides/using-oauth
 common:
   - type: AgenticAccess
     url: agentic-access/blizzard-entertainment-agentic-access.yml
