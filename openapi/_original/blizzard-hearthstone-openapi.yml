@@ -1,0 +1,127 @@
+openapi: 3.1.0
+info:
+  title: Hearthstone Game Data API
+  description: >-
+    Battle.net Game Data API for Hearthstone providing access to card sets,
+    individual cards, card backs, card decks (deck codes), and metadata such as
+    classes, sets, rarities, types, and game modes. Requires an OAuth 2.0
+    client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+  - url: https://us.api.blizzard.com
+    description: US regional host
+  - url: https://eu.api.blizzard.com
+    description: EU regional host
+security:
+  - bearerAuth: []
+tags:
+  - name: Cards
+    description: Search and retrieve Hearthstone cards.
+  - name: Card Backs
+    description: Retrieve Hearthstone card-back data.
+  - name: Decks
+    description: Decode Hearthstone deck codes.
+  - name: Metadata
+    description: Retrieve Hearthstone metadata reference data.
+paths:
+  /hearthstone/cards:
+    get:
+      operationId: searchCards
+      summary: Search Cards
+      description: Returns a list of cards matching the supplied filters.
+      tags:
+        - Cards
+      parameters:
+        - name: set
+          in: query
+          schema:
+            type: string
+        - name: class
+          in: query
+          schema:
+            type: string
+        - name: manaCost
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Cards returned.
+  /hearthstone/cards/{idOrSlug}:
+    get:
+      operationId: getCard
+      summary: Get Card
+      description: Returns a single Hearthstone card by id or slug.
+      tags:
+        - Cards
+      parameters:
+        - name: idOrSlug
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Card returned.
+  /hearthstone/cardbacks:
+    get:
+      operationId: searchCardBacks
+      summary: Search Card Backs
+      description: Returns a list of card backs matching the supplied filters.
+      tags:
+        - Card Backs
+      parameters:
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Card backs returned.
+  /hearthstone/deck:
+    get:
+      operationId: getDeck
+      summary: Get Deck
+      description: Returns the deck represented by a Hearthstone deck code.
+      tags:
+        - Decks
+      parameters:
+        - name: code
+          in: query
+          required: true
+          description: Hearthstone deck code.
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Deck returned.
+  /hearthstone/metadata:
+    get:
+      operationId: getMetadata
+      summary: Get Metadata
+      description: Returns Hearthstone metadata reference data (sets, classes, etc.).
+      tags:
+        - Metadata
+      parameters:
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Metadata returned.
+components:
+  parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

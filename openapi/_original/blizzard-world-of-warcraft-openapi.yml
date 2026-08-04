@@ -1,0 +1,181 @@
+openapi: 3.1.0
+info:
+  title: World of Warcraft Game Data API
+  description: >-
+    Battle.net Game Data API for World of Warcraft providing read-only access to
+    achievements, auctions, characters, guilds, items, mounts, pets, PvP
+    seasons, realms, and regions. Requires an OAuth 2.0 client credentials
+    access token from https://oauth.battle.net. Namespaces (static, dynamic,
+    profile) are passed as the `namespace` query parameter to select the data
+    set.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+  - url: https://us.api.blizzard.com
+    description: US regional host
+  - url: https://eu.api.blizzard.com
+    description: EU regional host
+  - url: https://kr.api.blizzard.com
+    description: Korea regional host
+  - url: https://tw.api.blizzard.com
+    description: Taiwan regional host
+security:
+  - bearerAuth: []
+tags:
+  - name: Realms
+    description: Retrieve realm and connected-realm reference data.
+  - name: Characters
+    description: Retrieve player character profile data.
+  - name: Guilds
+    description: Retrieve guild profile data.
+  - name: Auctions
+    description: Retrieve live auction-house listings per connected realm.
+  - name: Achievements
+    description: Retrieve achievement reference data.
+  - name: Mounts
+    description: Retrieve mount index and detail data.
+paths:
+  /data/wow/realm/index:
+    get:
+      operationId: getRealmIndex
+      summary: Get Realm Index
+      description: Returns an index of realms for the regional host.
+      tags:
+        - Realms
+      parameters:
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Realm index returned.
+  /data/wow/realm/{realmSlug}:
+    get:
+      operationId: getRealm
+      summary: Get Realm
+      description: Returns a single realm by slug.
+      tags:
+        - Realms
+      parameters:
+        - name: realmSlug
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Realm returned.
+  /data/wow/connected-realm/{connectedRealmId}/auctions:
+    get:
+      operationId: getAuctions
+      summary: Get Auctions
+      description: Returns all active auctions for a connected realm.
+      tags:
+        - Auctions
+      parameters:
+        - name: connectedRealmId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Auction listings returned.
+  /profile/wow/character/{realmSlug}/{characterName}:
+    get:
+      operationId: getCharacterProfileSummary
+      summary: Get Character Profile Summary
+      description: Returns a profile summary for a single WoW character.
+      tags:
+        - Characters
+      parameters:
+        - name: realmSlug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: characterName
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Character profile returned.
+  /data/wow/guild/{realmSlug}/{nameSlug}:
+    get:
+      operationId: getGuild
+      summary: Get Guild
+      description: Returns a guild profile.
+      tags:
+        - Guilds
+      parameters:
+        - name: realmSlug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: nameSlug
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Guild profile returned.
+  /data/wow/achievement/index:
+    get:
+      operationId: getAchievementIndex
+      summary: Get Achievement Index
+      description: Returns an index of achievements.
+      tags:
+        - Achievements
+      parameters:
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Achievement index returned.
+  /data/wow/mount/index:
+    get:
+      operationId: getMountIndex
+      summary: Get Mount Index
+      description: Returns an index of mounts.
+      tags:
+        - Mounts
+      parameters:
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Mount index returned.
+components:
+  parameters:
+    Namespace:
+      name: namespace
+      in: query
+      required: true
+      description: Game Data namespace (e.g. static-us, dynamic-us, profile-us).
+      schema:
+        type: string
+    Locale:
+      name: locale
+      in: query
+      required: false
+      description: Locale used for localized fields (e.g. en_US).
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

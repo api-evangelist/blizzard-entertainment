@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: StarCraft II Community API
+  description: >-
+    Battle.net Community API for StarCraft II providing access to ladder data,
+    grandmaster leaderboards, season info, and player profile data. Requires an
+    OAuth 2.0 client credentials access token from https://oauth.battle.net.
+  version: '1.0'
+  contact:
+    name: Battle.net Developer Portal
+    url: https://develop.battle.net/
+servers:
+  - url: https://us.api.blizzard.com
+    description: US regional host
+  - url: https://eu.api.blizzard.com
+    description: EU regional host
+security:
+  - bearerAuth: []
+tags:
+  - name: Profiles
+    description: Retrieve StarCraft II player and legacy profile data.
+  - name: Ladders
+    description: Retrieve ladder, grandmaster, and season data.
+paths:
+  /sc2/profile/{regionId}/{realmId}/{profileId}:
+    get:
+      operationId: getProfile
+      summary: Get Profile
+      description: Returns a StarCraft II player profile.
+      tags:
+        - Profiles
+      parameters:
+        - $ref: '#/components/parameters/RegionId'
+        - $ref: '#/components/parameters/RealmId'
+        - $ref: '#/components/parameters/ProfileId'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Profile returned.
+  /sc2/profile/{regionId}/{realmId}/{profileId}/ladders:
+    get:
+      operationId: getProfileLadders
+      summary: Get Profile Ladders
+      description: Returns the ladders a player is participating in.
+      tags:
+        - Profiles
+        - Ladders
+      parameters:
+        - $ref: '#/components/parameters/RegionId'
+        - $ref: '#/components/parameters/RealmId'
+        - $ref: '#/components/parameters/ProfileId'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Ladders returned.
+  /sc2/ladder/grandmaster/{regionId}:
+    get:
+      operationId: getGrandmasterLeaderboard
+      summary: Get Grandmaster Leaderboard
+      description: Returns the current grandmaster leaderboard for a region.
+      tags:
+        - Ladders
+      parameters:
+        - $ref: '#/components/parameters/RegionId'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Leaderboard returned.
+  /sc2/ladder/season/{regionId}:
+    get:
+      operationId: getSeason
+      summary: Get Season
+      description: Returns the current season for a region.
+      tags:
+        - Ladders
+      parameters:
+        - $ref: '#/components/parameters/RegionId'
+        - $ref: '#/components/parameters/Locale'
+      responses:
+        '200':
+          description: Season returned.
+components:
+  parameters:
+    RegionId:
+      name: regionId
+      in: path
+      required: true
+      schema:
+        type: integer
+    RealmId:
+      name: realmId
+      in: path
+      required: true
+      schema:
+        type: integer
+    ProfileId:
+      name: profileId
+      in: path
+      required: true
+      schema:
+        type: integer
+    Locale:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
