@@ -28,7 +28,7 @@ description: >-
   player profile data for its major franchises including World of Warcraft, Diablo III, StarCraft II, and Hearthstone.
 created: '2026-05-05'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: blizzard-entertainment:blizzard-entertainment-achievements-api
   name: Blizzard Entertainment Achievements API
