@@ -1,0 +1,122 @@
+{
+  "item": [
+    {
+      "id": "ec614598-f39d-47ca-80ae-6179309e4dbf",
+      "name": "Metadata",
+      "description": {
+        "content": "Retrieve Hearthstone metadata reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a5cfa05-be83-4bd6-9bf3-ab2f5f7c7b97",
+          "name": "Get Metadata",
+          "request": {
+            "name": "Get Metadata",
+            "description": {
+              "content": "Returns Hearthstone metadata reference data (sets, classes, etc.).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "acd1550e-a7a1-4788-8cd6-4a595b0bd913",
+              "name": "Metadata returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "915bedc7-bea3-40d1-b58a-1907c95e9236",
+    "name": "Diablo III Community Achievements Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

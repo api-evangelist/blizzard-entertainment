@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "e87099fd-4596-451c-a1e0-2934ab3f4c4d",
+      "name": "Mounts",
+      "description": {
+        "content": "Retrieve mount index and detail data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b80ecf5-5f96-42b0-b757-87d774ae495a",
+          "name": "Get Mount Index",
+          "request": {
+            "name": "Get Mount Index",
+            "description": {
+              "content": "Returns an index of mounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "wow",
+                "mount",
+                "index"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "<string>",
+                  "description": "(Required) Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f342dbef-31aa-4228-b51b-685975d910c7",
+              "name": "Mount index returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "wow",
+                    "mount",
+                    "index"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4cc68221-8753-4420-914e-949b4c62b8c5",
+    "name": "Diablo III Community Achievements Mounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

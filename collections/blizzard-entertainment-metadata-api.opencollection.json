@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Metadata API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/hearthstone/metadata",
+            "params": [
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns Hearthstone metadata reference data (sets, classes, etc.)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

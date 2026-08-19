@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Cards API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/hearthstone/cards",
+            "params": [
+              {
+                "name": "set",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "class",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "manaCost",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of cards matching the supplied filters."
+        },
+        {
+          "info": {
+            "name": "Get Card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/hearthstone/cards/:idOrSlug",
+            "params": [
+              {
+                "name": "idOrSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a single Hearthstone card by id or slug."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements UserInfo API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UserInfo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get User Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/oauth/userinfo",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Returns the Battle.net account id, battletag, and sub claim for the authenticated user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,376 @@
+{
+  "item": [
+    {
+      "id": "81031293-42b4-4277-9dfc-51a00b7904db",
+      "name": "Ladders",
+      "description": {
+        "content": "Retrieve ladder, grandmaster, and season data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e4592eec-064a-4f28-8368-e2b5ffedd3c2",
+          "name": "Get Profile Ladders",
+          "request": {
+            "name": "Get Profile Ladders",
+            "description": {
+              "content": "Returns the ladders a player is participating in.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sc2",
+                "profile",
+                ":regionId",
+                ":realmId",
+                ":profileId",
+                "ladders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "regionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "realmId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "profileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e228a8af-e16f-4f03-8f98-4db4f5a56d4b",
+              "name": "Ladders returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sc2",
+                    "profile",
+                    ":regionId",
+                    ":realmId",
+                    ":profileId",
+                    "ladders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "regionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "realmId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "profileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f32a726d-1e3b-477b-aa21-63c477209cc0",
+          "name": "Get Grandmaster Leaderboard",
+          "request": {
+            "name": "Get Grandmaster Leaderboard",
+            "description": {
+              "content": "Returns the current grandmaster leaderboard for a region.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sc2",
+                "ladder",
+                "grandmaster",
+                ":regionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "regionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70b386fe-7318-48ae-8ab1-631c3df12766",
+              "name": "Leaderboard returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sc2",
+                    "ladder",
+                    "grandmaster",
+                    ":regionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "regionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0351833-325b-4c77-ba83-c1025c30f2aa",
+          "name": "Get Season",
+          "request": {
+            "name": "Get Season",
+            "description": {
+              "content": "Returns the current season for a region.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sc2",
+                "ladder",
+                "season",
+                ":regionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "regionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aaf440e2-72cf-4865-bfc3-3d13db87c1ea",
+              "name": "Season returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sc2",
+                    "ladder",
+                    "season",
+                    ":regionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "regionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b0e16192-a574-4142-98af-6da8d39f4ade",
+    "name": "Diablo III Community Achievements Ladders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

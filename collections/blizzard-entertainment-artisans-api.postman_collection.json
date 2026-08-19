@@ -1,0 +1,143 @@
+{
+  "item": [
+    {
+      "id": "6742d743-2134-4041-bacf-ee1d26ac3cce",
+      "name": "Artisans",
+      "description": {
+        "content": "Retrieve artisan and recipe reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aa0f589d-6380-4a07-a6ab-8f9c2460873d",
+          "name": "Get Artisan",
+          "request": {
+            "name": "Get Artisan",
+            "description": {
+              "content": "Returns an artisan by slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "data",
+                "artisan",
+                ":artisanSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "artisanSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f7fc184-155d-406f-a2da-74b483c672fa",
+              "name": "Artisan returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "data",
+                    "artisan",
+                    ":artisanSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "artisanSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "36c33b0a-f8cd-4fb8-9197-3a0200b5fa64",
+    "name": "Diablo III Community Achievements Artisans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

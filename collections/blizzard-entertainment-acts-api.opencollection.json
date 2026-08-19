@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Acts API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Acts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Act Index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/d3/data/act",
+            "params": [
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns an index of Diablo III acts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

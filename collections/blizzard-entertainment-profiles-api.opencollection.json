@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Profiles API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Api Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/d3/profile/:accountId/",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Battle.net account id in the form name-tag."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a player's full Diablo III career profile."
+        },
+        {
+          "info": {
+            "name": "Get Api Hero",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/d3/profile/:accountId/hero/:heroId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "heroId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a single hero from a player's Diablo III career."
+        },
+        {
+          "info": {
+            "name": "Get Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/sc2/profile/:regionId/:realmId/:profileId",
+            "params": [
+              {
+                "name": "regionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "realmId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "profileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a StarCraft II player profile."
+        },
+        {
+          "info": {
+            "name": "Get Profile Ladders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/sc2/profile/:regionId/:realmId/:profileId/ladders",
+            "params": [
+              {
+                "name": "regionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "realmId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "profileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the ladders a player is participating in."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

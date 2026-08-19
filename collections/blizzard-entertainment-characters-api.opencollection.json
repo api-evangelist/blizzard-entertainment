@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Characters API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Characters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Character Class",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/d3/data/hero/:classSlug",
+            "params": [
+              {
+                "name": "classSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a Diablo III character class by slug."
+        },
+        {
+          "info": {
+            "name": "Get Character Profile Summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/profile/wow/character/:realmSlug/:characterName",
+            "params": [
+              {
+                "name": "realmSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "characterName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a profile summary for a single WoW character."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

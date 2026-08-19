@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "3d0a5154-7d8e-498b-aa0e-317a20f9821b",
+      "name": "UserInfo",
+      "description": {
+        "content": "OpenID Connect userinfo endpoint.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2768b08f-c0e9-4453-9c1c-9bca394b0a9f",
+          "name": "Get User Info",
+          "request": {
+            "name": "Get User Info",
+            "description": {
+              "content": "Returns the Battle.net account id, battletag, and sub claim for the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "oauth",
+                "userinfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "92120221-f551-4bf9-a334-4ef441e0dc25",
+              "name": "User info returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth",
+                    "userinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "afb79636-f574-4c3d-8ddf-3cadbc3cfd6f",
+    "name": "Diablo III Community Achievements UserInfo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "item": [
+    {
+      "id": "bcf99054-e971-4eae-8b31-c36f41317125",
+      "name": "Realms",
+      "description": {
+        "content": "Retrieve realm and connected-realm reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0b0eb4a6-9698-4375-a992-d38757413721",
+          "name": "Get Realm Index",
+          "request": {
+            "name": "Get Realm Index",
+            "description": {
+              "content": "Returns an index of realms for the regional host.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "wow",
+                "realm",
+                "index"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "<string>",
+                  "description": "(Required) Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c64e55e0-5ffa-464f-9f28-c34a02ce937e",
+              "name": "Realm index returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "wow",
+                    "realm",
+                    "index"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c03af63a-c1d7-42d1-9885-278689685594",
+          "name": "Get Realm",
+          "request": {
+            "name": "Get Realm",
+            "description": {
+              "content": "Returns a single realm by slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "wow",
+                "realm",
+                ":realmSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "<string>",
+                  "description": "(Required) Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "realmSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb9d7938-448a-401d-9001-be550c8a5a39",
+              "name": "Realm returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "wow",
+                    "realm",
+                    ":realmSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "namespace",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "realmSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6dc01ff4-d0a9-4892-b0d2-74a6a9a99f6b",
+    "name": "Diablo III Community Achievements Realms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

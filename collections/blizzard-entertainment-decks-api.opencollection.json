@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Decks API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Decks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Deck",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/hearthstone/deck",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "Hearthstone deck code."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the deck represented by a Hearthstone deck code."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

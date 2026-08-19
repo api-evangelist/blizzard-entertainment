@@ -1,0 +1,257 @@
+{
+  "item": [
+    {
+      "id": "9b5cf372-af0d-4881-95cd-5a2cb9619787",
+      "name": "Cards",
+      "description": {
+        "content": "Search and retrieve Hearthstone cards.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba74b118-c827-4c87-9ae1-ea7d8fda5775",
+          "name": "Search Cards",
+          "request": {
+            "name": "Search Cards",
+            "description": {
+              "content": "Returns a list of cards matching the supplied filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "cards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "set",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "class",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manaCost",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manaCost",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "442dc029-003c-4703-91e5-0abf3c1b75db",
+              "name": "Cards returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "set",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "class",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "manaCost",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "manaCost",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51b2f443-59ca-44d2-82f6-564d0664be62",
+          "name": "Get Card",
+          "request": {
+            "name": "Get Card",
+            "description": {
+              "content": "Returns a single Hearthstone card by id or slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "cards",
+                ":idOrSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "idOrSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b5df8e51-0faf-47c0-b142-dc055a30613b",
+              "name": "Card returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "cards",
+                    ":idOrSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "idOrSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "de25fc8b-6324-4349-9d98-bc577af9125f",
+    "name": "Diablo III Community Achievements Cards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

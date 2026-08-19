@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Token API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Token",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us.api.blizzard.com/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "code",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uri",
+                  "value": ""
+                },
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "client_secret",
+                  "value": ""
+                },
+                {
+                  "name": "refresh_token",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Exchanges an authorization code or client credentials for an access token."
+        },
+        {
+          "info": {
+            "name": "Check Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us.api.blizzard.com/oauth/check_token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "token",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Validates an access token and returns information about it."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

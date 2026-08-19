@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Ladders API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ladders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Profile Ladders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/sc2/profile/:regionId/:realmId/:profileId/ladders",
+            "params": [
+              {
+                "name": "regionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "realmId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "profileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the ladders a player is participating in."
+        },
+        {
+          "info": {
+            "name": "Get Grandmaster Leaderboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/sc2/ladder/grandmaster/:regionId",
+            "params": [
+              {
+                "name": "regionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the current grandmaster leaderboard for a region."
+        },
+        {
+          "info": {
+            "name": "Get Season",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/sc2/ladder/season/:regionId",
+            "params": [
+              {
+                "name": "regionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the current season for a region."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

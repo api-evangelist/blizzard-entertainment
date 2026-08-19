@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "0fe75438-5e5c-4ed5-906c-6dd5442f3984",
+      "name": "Acts",
+      "description": {
+        "content": "Retrieve Diablo III act reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "28564f42-4f7e-49e2-9782-a3c9cf24947f",
+          "name": "Get Act Index",
+          "request": {
+            "name": "Get Act Index",
+            "description": {
+              "content": "Returns an index of Diablo III acts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "d3",
+                "data",
+                "act"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Locale used for localized fields (e.g. en_US)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3d67c0b-9e95-4cc8-9c33-609e67c3b628",
+              "name": "Acts returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "d3",
+                    "data",
+                    "act"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d1287e8f-f88c-4c23-90af-81842c8fbf67",
+    "name": "Diablo III Community Achievements Acts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

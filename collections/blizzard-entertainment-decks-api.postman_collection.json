@@ -1,0 +1,132 @@
+{
+  "item": [
+    {
+      "id": "7206a4b0-7552-4313-a191-f4f07ee15781",
+      "name": "Decks",
+      "description": {
+        "content": "Decode Hearthstone deck codes.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70a23d09-1770-4e9a-bf57-4b9e13b7586f",
+          "name": "Get Deck",
+          "request": {
+            "name": "Get Deck",
+            "description": {
+              "content": "Returns the deck represented by a Hearthstone deck code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hearthstone",
+                "deck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "(Required) Hearthstone deck code."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "914a60ad-63e3-43d9-a5df-e32d3ce114e6",
+              "name": "Deck returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hearthstone",
+                    "deck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.api.blizzard.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bf1568ef-cabe-4f60-ba1a-86e2c27cbe88",
+    "name": "Diablo III Community Achievements Decks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player profile data. Requires an OAuth 2.0 client credentials access token from https://oauth.battle.net.\n\nContact Support:\n Name: Battle.net Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

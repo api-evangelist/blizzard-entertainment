@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Realms API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Realms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Realm Index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/realm/index",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns an index of realms for the regional host."
+        },
+        {
+          "info": {
+            "name": "Get Realm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/realm/:realmSlug",
+            "params": [
+              {
+                "name": "realmSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a single realm by slug."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Guilds API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guilds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Guild",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/guild/:realmSlug/:nameSlug",
+            "params": [
+              {
+                "name": "realmSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "nameSlug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns a guild profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Card Backs API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Card Backs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Card Backs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/hearthstone/cardbacks",
+            "params": [
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of card backs matching the supplied filters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diablo III Community Achievements Auctions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auctions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Auctions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.api.blizzard.com/data/wow/connected-realm/:connectedRealmId/auctions",
+            "params": [
+              {
+                "name": "connectedRealmId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query",
+                "description": "Game Data namespace (e.g. static-us, dynamic-us, profile-us)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Locale used for localized fields (e.g. en_US)."
+              }
+            ]
+          },
+          "docs": "Returns all active auctions for a connected realm."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
