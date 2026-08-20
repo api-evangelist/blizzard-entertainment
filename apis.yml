@@ -256,6 +256,8 @@ apis:
   humanURL: https://develop.battle.net/documentation/world-of-warcraft
   baseURL: https://us.api.blizzard.com
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
