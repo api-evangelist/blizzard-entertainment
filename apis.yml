@@ -21,11 +21,12 @@ accessModel:
   try_now: true
   public: false
   label: Free · Self-serve signup
-  confidence: high
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/blizzard-entertainment.png
 tags:
@@ -527,7 +528,7 @@ common:
         description: Battle.net account creation enforces age gating consistent with COPPA in the United States
       - name: GDPR
         description: EU regional endpoints and data handling are governed by Activision Blizzard's GDPR program
-position: Provider
+position: Producing
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
