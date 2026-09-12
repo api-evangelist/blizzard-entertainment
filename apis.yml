@@ -1,6 +1,7 @@
 aid: blizzard-entertainment
-url: https://raw.githubusercontent.com/api-evangelist/blizzard-entertainment/refs/heads/main/apis.yml
+url: https://www.blizzard.com/
 name: Blizzard Entertainment
+x-parent: microsoft-xbox
 type: Index
 deliveryModel:
   model: saas
