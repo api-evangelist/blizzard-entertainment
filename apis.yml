@@ -420,16 +420,16 @@ apis:
     url: https://develop.battle.net/documentation/hearthstone/game-data-apis
   - type: Documentation
     url: https://develop.battle.net/documentation/guides/using-oauth
-- aid: blizzard-entertainment:blizzard-entertainment-userinfo-api
-  name: Blizzard Entertainment UserInfo API
+- aid: blizzard-entertainment:blizzard-entertainment-user-info-api
+  name: Blizzard Entertainment User Info API
   description: OpenID Connect userinfo endpoint.
   humanURL: https://develop.battle.net/documentation/world-of-warcraft
   baseURL: https://us.api.blizzard.com
   tags:
-  - UserInfo
+  - User Info
   properties:
   - type: OpenAPI
-    url: openapi/blizzard-entertainment-userinfo-api-openapi.yml
+    url: openapi/blizzard-entertainment-user-info-api-openapi.yml
   - type: Documentation
     url: https://develop.battle.net/documentation/world-of-warcraft/game-data-apis
   - type: Authentication
