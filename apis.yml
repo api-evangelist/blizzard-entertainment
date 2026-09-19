@@ -404,6 +404,8 @@ apis:
   humanURL: https://develop.battle.net/documentation/world-of-warcraft
   baseURL: https://us.api.blizzard.com
   tags:
+  - Tokens
+  tags_raw:
   - Token
   properties:
   - type: OpenAPI
@@ -426,6 +428,8 @@ apis:
   humanURL: https://develop.battle.net/documentation/world-of-warcraft
   baseURL: https://us.api.blizzard.com
   tags:
+  - UserInfo
+  tags_raw:
   - User Info
   properties:
   - type: OpenAPI
