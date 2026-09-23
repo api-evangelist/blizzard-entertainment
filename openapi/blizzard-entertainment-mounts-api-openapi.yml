@@ -36,18 +36,18 @@ paths:
           description: Mount index returned.
 components:
   parameters:
-    Namespace:
-      name: namespace
-      in: query
-      required: true
-      description: Game Data namespace (e.g. static-us, dynamic-us, profile-us).
-      schema:
-        type: string
     Locale:
       name: locale
       in: query
       required: false
       description: Locale used for localized fields (e.g. en_US).
+      schema:
+        type: string
+    Namespace:
+      name: namespace
+      in: query
+      required: true
+      description: Game Data namespace (e.g. static-us, dynamic-us, profile-us).
       schema:
         type: string
   securitySchemes:

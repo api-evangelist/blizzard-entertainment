@@ -10,7 +10,7 @@ servers:
 - url: https://oauth.battle.net
   description: Battle.net OAuth host
 tags:
-- name: UserInfo
+- name: User Info
   description: OpenID Connect userinfo endpoint.
 paths:
   /oauth/userinfo:
@@ -19,7 +19,7 @@ paths:
       summary: Get User Info
       description: Returns the Battle.net account id, battletag, and sub claim for the authenticated user.
       tags:
-      - UserInfo
+      - User Info
       security:
       - bearerAuth: []
       responses:

@@ -27,7 +27,9 @@
     "blizzard-entertainment-mounts-api-openapi.yml",
     "blizzard-entertainment-realms-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -38,7 +40,9 @@
     "blizzard-starcraft-ii-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "blizzard-world-of-warcraft-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "tag 'Characters' spans 2 source specs (blizzard-diablo-iii-openapi.yml, blizzard-world-of-warcraft-openapi.yml): per-path servers applied",
-    "tag 'Profiles' spans 2 source specs (blizzard-diablo-iii-openapi.yml, blizzard-starcraft-ii-openapi.yml): per-path servers applied"
+    "tag 'Profiles' spans 2 source specs (blizzard-diablo-iii-openapi.yml, blizzard-starcraft-ii-openapi.yml): per-path servers applied",
+    "superseded outputs removed: blizzard-entertainment-user-info-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 18 total)"
   ],
   "skipped": [
     "blizzard-entertainment-achievements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -58,6 +62,6 @@
     "blizzard-entertainment-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "blizzard-entertainment-realms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "blizzard-entertainment-token-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "blizzard-entertainment-userinfo-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "blizzard-entertainment-user-info-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }
