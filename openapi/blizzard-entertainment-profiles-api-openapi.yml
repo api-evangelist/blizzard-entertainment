@@ -116,14 +116,8 @@ components:
       description: Locale used for localized fields (e.g. en_US).
       schema:
         type: string
-    Locale_2:
-      name: locale
-      in: query
-      required: false
-      schema:
-        type: string
-    RegionId:
-      name: regionId
+    ProfileId:
+      name: profileId
       in: path
       required: true
       schema:
@@ -134,12 +128,18 @@ components:
       required: true
       schema:
         type: integer
-    ProfileId:
-      name: profileId
+    RegionId:
+      name: regionId
       in: path
       required: true
       schema:
         type: integer
+    Locale_2:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http
