@@ -60,6 +60,12 @@ paths:
           description: Season returned.
 components:
   parameters:
+    Locale:
+      name: locale
+      in: query
+      required: false
+      schema:
+        type: string
     ProfileId:
       name: profileId
       in: path
@@ -78,12 +84,6 @@ components:
       required: true
       schema:
         type: integer
-    Locale:
-      name: locale
-      in: query
-      required: false
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http
