@@ -66,14 +66,14 @@ components:
       required: false
       schema:
         type: string
-    ProfileId:
-      name: profileId
+    RealmId:
+      name: realmId
       in: path
       required: true
       schema:
         type: integer
-    RealmId:
-      name: realmId
+    ProfileId:
+      name: profileId
       in: path
       required: true
       schema:
