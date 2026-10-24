@@ -2,6 +2,7 @@
   "provider": "blizzard-entertainment",
   "sources": [
     "_original/blizzard-diablo-iii-openapi.yml",
+    "_original/blizzard-entertainment-openapi.json",
     "_original/blizzard-hearthstone-openapi.yml",
     "_original/blizzard-oauth-openapi.yml",
     "_original/blizzard-starcraft-ii-openapi.yml",
@@ -13,6 +14,7 @@
     "blizzard-entertainment-characters-api-openapi.yml",
     "blizzard-entertainment-items-api-openapi.yml",
     "blizzard-entertainment-profiles-api-openapi.yml",
+    "blizzard-entertainment-index-controller-api-openapi.yml",
     "blizzard-entertainment-card-backs-api-openapi.yml",
     "blizzard-entertainment-cards-api-openapi.yml",
     "blizzard-entertainment-decks-api-openapi.yml",
@@ -33,8 +35,10 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (5 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (6 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "blizzard-diablo-iii-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "blizzard-entertainment-openapi.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "blizzard-entertainment-openapi.json: declared missing tag: index-controller",
     "blizzard-hearthstone-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "blizzard-oauth-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "blizzard-starcraft-ii-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
@@ -42,7 +46,7 @@
     "tag 'Characters' spans 2 source specs (blizzard-diablo-iii-openapi.yml, blizzard-world-of-warcraft-openapi.yml): per-path servers applied",
     "tag 'Profiles' spans 2 source specs (blizzard-diablo-iii-openapi.yml, blizzard-starcraft-ii-openapi.yml): per-path servers applied",
     "superseded outputs removed: blizzard-entertainment-user-info-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 18 total)"
+    "apis.yml register: written (+2 apis, 19 total)"
   ],
   "skipped": [
     "blizzard-entertainment-achievements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
