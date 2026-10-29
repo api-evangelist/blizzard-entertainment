@@ -1,4 +1,4 @@
-# Blizzard Entertainment (blizzard-entertainment)
+# Blizzard Entertainment
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,162 +66,174 @@
 
 Blizzard Entertainment is an American video game developer and publisher and a subsidiary of Activision Blizzard. Blizzard exposes a Battle.net Developer Portal that provides public OAuth 2.0 protected APIs returning game data and player profile data for its major franchises including World of Warcraft, Diablo III, StarCraft II, and Hearthstone.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/blizzard-entertainment/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/blizzard-entertainment/refs/heads/main/apis.yml)
+**Areas:** Games · Entertainment · Video Games · Game Data · Battle.net
 
-## Scope
+## Blizzard Entertainment on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
+Everything profiled for Blizzard Entertainment is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/blizzard-entertainment/](https://apis.io/providers/blizzard-entertainment/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (18)
 
-- Games
-- Entertainment
-- Video Games
-- Game Data
-- Battle.net
+- [Blizzard Entertainment Achievements API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-achievements-api/) — Retrieve achievement reference data.
+- [Blizzard Entertainment Acts API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-acts-api/) — Retrieve Diablo III act reference data.
+- [Blizzard Entertainment Artisans API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-artisans-api/) — Retrieve artisan and recipe reference data.
+- [Blizzard Entertainment Auctions API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-auctions-api/) — Retrieve live auction-house listings per connected realm.
+- [Blizzard Entertainment Authorization API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-authorization-api/) — User-context authorization endpoints.
+- [Blizzard Entertainment Card Backs API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-card-backs-api/) — Retrieve Hearthstone card-back data.
+- [Blizzard Entertainment Cards API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-cards-api/) — Search and retrieve Hearthstone cards.
+- [Blizzard Entertainment Characters API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-characters-api/) — Retrieve character class and skill reference data.
+- [Blizzard Entertainment Decks API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-decks-api/) — Decode Hearthstone deck codes.
+- [Blizzard Entertainment Guilds API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-guilds-api/) — Retrieve guild profile data.
+- [Blizzard Entertainment Items API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-items-api/) — Retrieve item type and item reference data.
+- [Blizzard Entertainment Ladders API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-ladders-api/) — Retrieve ladder, grandmaster, and season data.
+- [Blizzard Entertainment Metadata API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-metadata-api/) — Retrieve Hearthstone metadata reference data.
+- [Blizzard Entertainment Mounts API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-mounts-api/) — Retrieve mount index and detail data.
+- [Blizzard Entertainment Profiles API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-profiles-api/) — Retrieve player career and hero profile data.
+- [Blizzard Entertainment Realms API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-realms-api/) — Retrieve realm and connected-realm reference data.
+- [Blizzard Entertainment Token API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-token-api/) — Token issuance and inspection endpoints.
+- [Blizzard Entertainment User Info API](https://apis.io/apis/blizzard-entertainment/blizzard-entertainment-user-info-api/) — OpenID Connect userinfo endpoint.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-05
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### World of Warcraft Game Data API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Battle.net Game Data API for World of Warcraft providing access to achievements, auctions, characters, guilds, items, mounts, pets, PvP seasons, realms, regions, and other core game data resources for both the retail and classic clients. Endpoints follow the Battle.net regional host pattern (e.g. https://us.api.blizzard.com) and require an OAuth 2.0 client credentials access token. Namespaces (static, dynamic, profile) are passed as query parameters to select the data set.
+- [Blizzard Entertainment Agentic Access](https://apis.io/agentic-access/blizzard-entertainment/blizzard-entertainment-agentic-access/)
 
-- **Human URL:** [https://develop.battle.net/documentation/world-of-warcraft](https://develop.battle.net/documentation/world-of-warcraft)
-- **Base URL:** `https://us.api.blizzard.com`
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- World of Warcraft
-- Game Data
-- Profile
-- Auctions
-- Characters
+- [Blizzard Entertainment Context](https://apis.io/jsonld/blizzard-entertainment/blizzard-entertainment-context/)
 
-#### Properties
+#### Vocabulary (1)
 
-- [Documentation](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis)
-- [Authentication](https://develop.battle.net/documentation/guides/using-oauth)
-- [OpenAPI](openapi/blizzard-world-of-warcraft-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/blizzard-world-of-warcraft.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/blizzard-world-of-warcraft.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The provider's domain terms, defined.
 
-### Diablo III Community API
+- [Blizzard Entertainment Vocabulary](https://apis.io/vocabularies/blizzard-entertainment/blizzard-entertainment-vocabulary/)
 
-Battle.net Community and Game Data API for Diablo III providing access to acts, artisans, recipes, followers, character classes, items, item types, and player career/hero profile data. Like other Battle.net APIs, endpoints use regional hosts and require an OAuth 2.0 client credentials access token.
+#### Collections (23)
 
-- **Human URL:** [https://develop.battle.net/documentation/diablo-3](https://develop.battle.net/documentation/diablo-3)
-- **Base URL:** `https://us.api.blizzard.com`
+Postman and Open Collection request collections.
 
-#### Tags
+- [Diablo III Community API](https://apis.io/collections/blizzard-entertainment/open-blizzard-diablo-iii/)
+- [Diablo III Community Achievements API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-achievements-api/)
+- [Diablo III Community Achievements Acts API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-acts-api/)
+- [Diablo III Community Achievements Artisans API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-artisans-api/)
+- [Diablo III Community Achievements Auctions API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-auctions-api/)
+- [Diablo III Community Achievements Authorization API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-authorization-api/)
+- [Diablo III Community Achievements Card Backs API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-card-backs-api/)
+- [Diablo III Community Achievements Cards API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-cards-api/)
+- [Diablo III Community Achievements Characters API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-characters-api/)
+- [Diablo III Community Achievements Decks API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-decks-api/)
+- [Diablo III Community Achievements Guilds API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-guilds-api/)
+- [Diablo III Community Achievements Items API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-items-api/)
+- [Diablo III Community Achievements Ladders API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-ladders-api/)
+- [Diablo III Community Achievements Metadata API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-metadata-api/)
+- [Diablo III Community Achievements Mounts API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-mounts-api/)
+- [Diablo III Community Achievements Profiles API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-profiles-api/)
+- [Diablo III Community Achievements Realms API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-realms-api/)
+- [Diablo III Community Achievements Token API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-token-api/)
+- [Diablo III Community Achievements UserInfo API](https://apis.io/collections/blizzard-entertainment/open-blizzard-entertainment-userinfo-api/)
+- [Hearthstone Game Data API](https://apis.io/collections/blizzard-entertainment/open-blizzard-hearthstone/)
+- [Battle.net OAuth API](https://apis.io/collections/blizzard-entertainment/open-blizzard-oauth/)
+- [StarCraft II Community API](https://apis.io/collections/blizzard-entertainment/open-blizzard-starcraft-ii/)
+- [World of Warcraft Game Data API](https://apis.io/collections/blizzard-entertainment/open-blizzard-world-of-warcraft/)
 
-- Diablo III
-- Game Data
-- Profile
-- Items
+#### Governance rules (1)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://develop.battle.net/documentation/diablo-3/community-apis)
-- [Authentication](https://develop.battle.net/documentation/guides/using-oauth)
-- [OpenAPI](openapi/blizzard-diablo-iii-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/blizzard-diablo-iii.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/blizzard-diablo-iii.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Blizzard Entertainment API Rules](https://apis.io/rules/blizzard-entertainment/blizzard-entertainment-rules/)
 
-### StarCraft II Community API
+#### Security (2)
 
-Battle.net Community API for StarCraft II providing access to ladder data, player profiles, legacy profiles, and grandmaster leaderboards. Requires an OAuth 2.0 client credentials access token issued by https://oauth.battle.net.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://develop.battle.net/documentation/starcraft-2](https://develop.battle.net/documentation/starcraft-2)
-- **Base URL:** `https://us.api.blizzard.com`
+- [Blizzard Entertainment Authentication](https://apis.io/security/blizzard-entertainment/blizzard-entertainment-authentication/)
+- [Blizzard Entertainment Domain Security](https://apis.io/security/blizzard-entertainment/blizzard-entertainment-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- StarCraft II
-- Game Data
-- Profile
-- Ladder
+Published plans, tiers and prices.
 
-#### Properties
+- [Blizzard Entertainment Plans Pricing](https://apis.io/plans/blizzard-entertainment/blizzard-entertainment-plans-pricing/)
 
-- [Documentation](https://develop.battle.net/documentation/starcraft-2/community-apis)
-- [Authentication](https://develop.battle.net/documentation/guides/using-oauth)
-- [OpenAPI](openapi/blizzard-starcraft-ii-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/blizzard-starcraft-ii.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/blizzard-starcraft-ii.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### Hearthstone Game Data API
+Published request limits.
 
-Battle.net Game Data API for Hearthstone providing access to card sets, individual cards, card backs, card decks (deck codes), and metadata such as classes, sets, rarities, types, and game modes. Card and metadata lookups support locale-aware responses. Requires an OAuth 2.0 client credentials access token.
+- [Blizzard Entertainment Rate Limits](https://apis.io/rate-limits/blizzard-entertainment/blizzard-entertainment-rate-limits/)
 
-- **Human URL:** [https://develop.battle.net/documentation/hearthstone](https://develop.battle.net/documentation/hearthstone)
-- **Base URL:** `https://us.api.blizzard.com`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Hearthstone
-- Game Data
-- Cards
-- Decks
+- [Blizzard Entertainment Finops](https://apis.io/finops/blizzard-entertainment/blizzard-entertainment-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://develop.battle.net/documentation/hearthstone/game-data-apis)
-- [Authentication](https://develop.battle.net/documentation/guides/using-oauth)
-- [OpenAPI](openapi/blizzard-hearthstone-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/blizzard-hearthstone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/blizzard-hearthstone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Battle.net OAuth API
-
-OAuth 2.0 authorization server for the Battle.net developer platform. Supports the authorization code flow for user-context access (Battle.net account login and profile scopes such as wow.profile, sc2.profile, d3.profile, openid) and the client credentials flow for accessing the public Game Data APIs. Hosted at https://oauth.battle.net.
-
-- **Human URL:** [https://develop.battle.net/documentation/guides/using-oauth](https://develop.battle.net/documentation/guides/using-oauth)
-- **Base URL:** `https://oauth.battle.net`
-
-#### Tags
-
-- OAuth
-- Authentication
-- Authorization
-- OpenID Connect
-
-#### Properties
-
-- [Documentation](https://develop.battle.net/documentation/guides/using-oauth)
-- [OpenAPI](openapi/blizzard-oauth-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/blizzard-oauth.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/blizzard-oauth.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/Blizzard)
-- [LinkedIn](https://www.linkedin.com/company/blizzard-entertainment)
 - [Website](https://www.blizzard.com/)
-- [Portal](https://develop.battle.net/)
 - [Documentation](https://develop.battle.net/documentation)
-- [Getting Started](https://develop.battle.net/documentation/guides/getting-started)
-- [Authentication](https://develop.battle.net/documentation/guides/using-oauth)
-- [Terms of Service](https://www.blizzard.com/legal/8b946525-de01-481a-9f4f-89af2c4f5d29/blizzard-end-user-license-agreement)
-- [Privacy Policy](https://www.blizzard.com/legal/fba4d00f-c7e4-4883-b8b9-1b4500a402ea/blizzard-entertainment-privacy-notice)
-- [Forum](https://us.forums.blizzard.com/en/blizzard/c/api-discussion/18)
-- [Spectral Rules](rules/blizzard-entertainment-rules.yml)
-- [Vocabulary](vocabulary/blizzard-entertainment-vocabulary.yaml)
-- [JSON-LD](json-ld/blizzard-entertainment-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Plans](plans/blizzard-entertainment-plans-pricing.yml)
-- [Rate Limits](rate-limits/blizzard-entertainment-rate-limits.yml)
-- [Fin Ops](finops/blizzard-entertainment-finops.yml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Compliance](undefined)
+- [Getting started](https://develop.battle.net/documentation/guides/getting-started)
+- [Terms of service](https://www.blizzard.com/legal/8b946525-de01-481a-9f4f-89af2c4f5d29/blizzard-end-user-license-agreement)
+- [Privacy policy](https://www.blizzard.com/legal/fba4d00f-c7e4-4883-b8b9-1b4500a402ea/blizzard-entertainment-privacy-notice)
+- [GitHub](https://github.com/Blizzard)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 54.0 |
+| Contract governance | 25.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 28.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 27.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/blizzard-entertainment/](https://apis.io/providers/blizzard-entertainment/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Blizzard Entertainment: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/blizzard-entertainment/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
